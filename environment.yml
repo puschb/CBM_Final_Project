@@ -1,0 +1,18 @@
+name: cbmproj
+channels:
+  - pytorch
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.12
+  - numpy
+  - pandas
+  - requests
+  - matplotlib
+  - scipy
+  - pytorch
+  - pip=23.2.1
+  - tqdm
+  - scikit-learn
+  - pip:
+    - torch-geometric
