@@ -13,3 +13,11 @@ peft
 google-api-python-client
 python-dotenv
 
+# For comment processing
+nltk
+unidecode
+
+# For embeddings/semantic simularity
+scikit-learn
+gensim
+requests
