@@ -1,0 +1,15 @@
+# To confirm its working
+fastapi
+pydantic
+uvicorn
+
+# For running the model
+pandas
+transformers
+datasets
+peft
+
+# For the youtube link & comment scrapper
+google-api-python-client
+python-dotenv
+
