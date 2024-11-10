@@ -1,9 +1,10 @@
-from transformers import GPT2Tokenizer, GPT2LMHeadModel, AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
+from transformers import GPT2Tokenizer, GPT2LMHeadModel, AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig, pipeline
 import torch
 from dotenv import load_dotenv
 import os
 
 load_dotenv()
+cur_dir = os.path.dirname(os.path.abspath(__file__))
 
 class GPT2Inference:
     def __init__(self):
@@ -105,3 +106,34 @@ class LLama38bInference:
         return generated_texts
     
     
+
+class LocalInstructModelInference:
+    def __init__(self, load_path, system_prompt):
+        self.pipe = pipeline(
+            "text-generation",
+            model=load_path,
+            torch_dtype=torch.bfloat16,
+            device_map="auto",
+        )
+        self.system_prompt = system_prompt
+    
+    def generate_text(self, input, max_tokens = 256):
+        messages = [
+                {"role": "system", "content": self.system_prompt},
+                {"role": "user", "content": input},
+                    ]
+
+        outputs = self.pipe(
+            messages,
+            max_new_tokens=max_tokens,
+        )
+
+        return outputs[0]["generated_text"][2]["content"]
+ 
+class LoadSystemPrompt:
+    def load_llama_instruct_system_prompt(previous_comments, post):
+        system_prompt_path = os.path.join(cur_dir, "./System Prompts/meta-llama_Llama-3.2-3B-Instruct.txt")
+        with open(system_prompt_path, "r") as file:
+            system_prompt = file.read()
+        system_prompt = system_prompt.format(previous_comments = previous_comments, post = post)
+        return system_prompt
