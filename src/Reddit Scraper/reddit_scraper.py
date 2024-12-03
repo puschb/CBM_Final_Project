@@ -49,6 +49,32 @@ class RedditScraper:
         
         return comments_data
 
+    def scrape_user_political_comments(self, username, political_subreddits):
+        # Get the Reddit user
+        user = self.api.redditor(username)
+
+        # List to store comment data
+        comments_data = []
+        # Print subreddits where the user has commented
+        print(set([comment.subreddit.display_name for comment in user.comments.new(limit=None)]))
+        
+        # Iterate through the user's comments
+        for comment in user.comments.new(limit=None):  # `limit=None` fetches all comments
+            # Filter by political subreddits
+            if comment.subreddit.display_name in political_subreddits:
+                # Collect comment data
+                comment_info = {
+                    "comment_id": comment.id,
+                    "subreddit": comment.subreddit.display_name,
+                    "body": comment.body,
+                    "time": datetime.fromtimestamp(comment.created_utc, tz=timezone.utc).strftime('%Y-%m-%d %H:%M:%S %Z'),
+                    "score": comment.score,
+                    "link_id": comment.link_id,  # ID of the post this comment is related to
+                    "parent_id": comment.parent_id  # ID of the comment or post this comment replies to
+                }
+                comments_data.append(comment_info)
+        return comments_data 
+
     def scrape_subreddit_posts(self, subreddit_name, save_path):
         """Scrape all posts from a specified subreddit with > 100 comments and save posts and comments to CSV files."""
         
@@ -122,8 +148,6 @@ class RedditScraper:
                 continue  # Retry the request after waiting
 
         print(f"All posts and comments are saved in '{save_path}' directory.")
-
-
 
 
 if __name__ == '__main__':
