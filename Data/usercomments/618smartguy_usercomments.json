@@ -1,0 +1,119 @@
+[
+    {
+        "comment_id": "lsrdgt5",
+        "subreddit": "books",
+        "body": "https://spylab.ai/blog/training-data-extraction/\u00a0 \u00a0\u00a0\n\n\nHere's a link to info about a technique that makes it more difficult to make chatgpt output training data, and how they use a new promting idea to circumvent this extra difficulty. I've never seen this particular article before, but I easily found an article that explains exactly what you quoted of me, because I do have a good understanding of this.\u00a0",
+        "time": "2024-10-19 23:14:05 UTC",
+        "score": 1,
+        "link_id": "t3_1g7cx2t",
+        "parent_id": "t1_lsqsivg"
+    },
+    {
+        "comment_id": "lsrcwmd",
+        "subreddit": "books",
+        "body": "https://not-just-memorization.github.io/extracting-training-data-from-chatgpt.html\n\n\nHere is some better examples if you don't like the api key one",
+        "time": "2024-10-19 23:10:38 UTC",
+        "score": 1,
+        "link_id": "t3_1g7cx2t",
+        "parent_id": "t1_lsqth3c"
+    },
+    {
+        "comment_id": "lsrc4bi",
+        "subreddit": "books",
+        "body": "I do",
+        "time": "2024-10-19 23:05:52 UTC",
+        "score": 1,
+        "link_id": "t3_1g7cx2t",
+        "parent_id": "t1_lsqsivg"
+    },
+    {
+        "comment_id": "lsrbv9x",
+        "subreddit": "books",
+        "body": "Yes",
+        "time": "2024-10-19 23:04:17 UTC",
+        "score": 1,
+        "link_id": "t3_1g7cx2t",
+        "parent_id": "t1_lsqth3c"
+    },
+    {
+        "comment_id": "lsrb1y5",
+        "subreddit": "books",
+        "body": ">In a suit, in a court of law, the end result is the same, the suit gets dismissed. And that's what happened.\n\n\nA different suit getting dismissed doesn't prove anything about the nyt. If you have an argument for why the one suit implies somethng spesific about the other, I would love to hear it. Right now you are not comparing anything about the two cases.\u00a0",
+        "time": "2024-10-19 22:59:11 UTC",
+        "score": 2,
+        "link_id": "t3_1g7cx2t",
+        "parent_id": "t1_lsqsfyk"
+    },
+    {
+        "comment_id": "lsr9h6m",
+        "subreddit": "books",
+        "body": "Why are you on about copyright still? I just explained that's irrelevant. Obviously it proves something was part of the training data (the topic of this thread) on no matter how much so called \"hacking\" it takes.\u00a0",
+        "time": "2024-10-19 22:49:20 UTC",
+        "score": 2,
+        "link_id": "t3_1g7cx2t",
+        "parent_id": "t1_lsqsfyk"
+    },
+    {
+        "comment_id": "lsqrbh4",
+        "subreddit": "books",
+        "body": "It seems like you don't know the difference between failing to prove something and disproving something.\u00a0",
+        "time": "2024-10-19 20:58:53 UTC",
+        "score": 1,
+        "link_id": "t3_1g7cx2t",
+        "parent_id": "t1_lsqpzh4"
+    },
+    {
+        "comment_id": "lsqqo9v",
+        "subreddit": "books",
+        "body": "Try this https://www.reddit.com/r/bugbounty/comments/1f51q5g/chatgpt_gave_me_a_an_active_and_workinf_stripe/\n\n\nWow, I was not expecting such a recent example.\u00a0",
+        "time": "2024-10-19 20:55:12 UTC",
+        "score": 0,
+        "link_id": "t3_1g7cx2t",
+        "parent_id": "t1_lsqq4s6"
+    },
+    {
+        "comment_id": "lsqp13m",
+        "subreddit": "books",
+        "body": ">Having an API key isn't going to make it easier to receive copyrighted content from GPT, it just means you can prompt it on your own front end instead of their webpage/app\u00a0\u00a0\n\n\n1. Random API keys all over the internet\u00a0\n2. Chat gpt trained on code containing api keys\u00a0\u00a0\n3. Ask chat gpt to complete the code \"api_key =\"\u00a0\u00a0\n4. Chat gpt leaks the api key it trained on.\u00a0",
+        "time": "2024-10-19 20:45:51 UTC",
+        "score": 1,
+        "link_id": "t3_1g7cx2t",
+        "parent_id": "t1_lsqh35o"
+    },
+    {
+        "comment_id": "lsqop4a",
+        "subreddit": "books",
+        "body": ">But GPT does not output training data, through their own front end nor through their API\n\n\n\nI've provided two examples of this happening. You seem to be suggesting that ex 2 is fabricated and refuse to elaborate, taking about a literal different case instead.\u00a0\n\n\nThe first example you seem to have misunderstood.\u00a0",
+        "time": "2024-10-19 20:43:56 UTC",
+        "score": 3,
+        "link_id": "t3_1g7cx2t",
+        "parent_id": "t1_lsqnvm1"
+    },
+    {
+        "comment_id": "lsql2sa",
+        "subreddit": "books",
+        "body": "A model outputting training data is clearly relevant to\u00a0identifying what data it was trained on.\u00a0\n\n\n\u00a0I would like to know if you have a reason to think the nyt fabricated their example, it seems like you could say that about any example.\u00a0\n\n\nAs for \"copyright\" and \"credits\", they are mostly irrelevant to identifying what data a model is trained on.\u00a0",
+        "time": "2024-10-19 20:23:23 UTC",
+        "score": 0,
+        "link_id": "t3_1g7cx2t",
+        "parent_id": "t1_lsqh35o"
+    },
+    {
+        "comment_id": "lsqfy82",
+        "subreddit": "books",
+        "body": "I beleive it was common to be able to get api keys in the first release of chat gpt. Of course it is harder now but people are also better at advanced promoting ideas.\u00a0\n\n\nThe more recent example I know was in the NYT lawsuit where they were able to get the second half of their article by promoting it with the first half.\u00a0",
+        "time": "2024-10-19 19:53:53 UTC",
+        "score": 0,
+        "link_id": "t3_1g7cx2t",
+        "parent_id": "t1_lsqf3dl"
+    },
+    {
+        "comment_id": "lsq61q2",
+        "subreddit": "books",
+        "body": ">And it would be impossible to identify which ones it was trained on\u00a0\n\n\nThe current trend is that AI does output exact or near exact portions of training data when effectively instructed to by the user. What makes you think this would become impossible?",
+        "time": "2024-10-19 18:57:27 UTC",
+        "score": -9,
+        "link_id": "t3_1g7cx2t",
+        "parent_id": "t1_lspnhrf"
+    }
+]

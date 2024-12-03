@@ -49,19 +49,20 @@ class RedditScraper:
         
         return comments_data
 
-    def scrape_user_political_comments(self, username, political_subreddits):
+    def scrape_user_political_comments(self, username, subreddits, limit=None):
         # Get the Reddit user
         user = self.api.redditor(username)
 
         # List to store comment data
         comments_data = []
         # Print subreddits where the user has commented
-        print(set([comment.subreddit.display_name for comment in user.comments.new(limit=None)]))
+
+        print(set([comment.subreddit.display_name for comment in user.comments.new(limit=limit)]))
         
         # Iterate through the user's comments
-        for comment in user.comments.new(limit=None):  # `limit=None` fetches all comments
+        for comment in user.comments.new(limit=limit):  # `limit=None` fetches all comments
             # Filter by political subreddits
-            if comment.subreddit.display_name in political_subreddits:
+            if comment.subreddit.display_name in subreddits:
                 # Collect comment data
                 comment_info = {
                     "comment_id": comment.id,
