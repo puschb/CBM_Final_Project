@@ -159,7 +159,8 @@ class ArcticShiftScraper:
             "time_stamp_created": "created_utc",
             "comment_text": "body",
             "user": "author",
-            "corresponding_post_id": "link_id"
+            "corresponding_post_id": "link_id",
+            "link" : "permalink"
         }
 
         data = []
@@ -170,13 +171,17 @@ class ArcticShiftScraper:
                 try:
                     comment = json.loads(line.strip())  
                     if comment["author"] != "[deleted]":  # Filter deleted authors
+                        parent_comment_id = comment[field_mappings["parent_comment_id"]][3:]
+                        if parent_comment_id == comment[field_mappings["corresponding_post_id"]][3:]:
+                            parent_comment_id = "None"
                         data.append({
                             "comment_id": comment[field_mappings["comment_id"]],
-                            "parent_comment_id": comment[field_mappings["parent_comment_id"]][3:],
+                            "parent_comment_id": parent_comment_id,
                             "time_stamp_created": comment[field_mappings["time_stamp_created"]],
                             "comment_text": comment[field_mappings["comment_text"]],
                             "user": comment[field_mappings["user"]],
-                            "corresponding_post_id": comment[field_mappings["corresponding_post_id"]][3:]
+                            "corresponding_post_id": comment[field_mappings["corresponding_post_id"]][3:],
+                            "link": comment[field_mappings["link"]]
                         })
                 except json.JSONDecodeError:
                     print(f"Skipping invalid JSON line: {line}")
