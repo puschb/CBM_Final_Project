@@ -6,6 +6,7 @@ from datetime import datetime, timezone
 import os
 import time
 from dotenv import load_dotenv
+import json
 load_dotenv()
 
 class RedditScraper:
@@ -148,6 +149,88 @@ class RedditScraper:
                 continue  # Retry the request after waiting
 
         print(f"All posts and comments are saved in '{save_path}' directory.")
+
+class ArcticShiftScraper:
+    def process_comments(input_path, output_path):
+        field_mappings = {
+            "comment_id": "id",
+            "parent_comment_id": "parent_id",
+            "time_stamp_created": "created_utc",
+            "comment_text": "body",
+            "user": "author",
+            "corresponding_post_id": "link_id"
+        }
+
+        data = []
+
+        # Read the JSON Lines input file line by line and load valid data into a list
+        with open(input_path, 'r', encoding='utf-8') as jsonl_file:
+            for line in jsonl_file:
+                try:
+                    comment = json.loads(line.strip())  
+                    if comment["author"] != "[deleted]":  # Filter deleted authors
+                        data.append({
+                            "comment_id": comment[field_mappings["comment_id"]],
+                            "parent_comment_id": comment[field_mappings["parent_comment_id"]][3:],
+                            "time_stamp_created": comment[field_mappings["time_stamp_created"]],
+                            "comment_text": comment[field_mappings["comment_text"]],
+                            "user": comment[field_mappings["user"]],
+                            "corresponding_post_id": comment[field_mappings["corresponding_post_id"]][3:]
+                        })
+                except json.JSONDecodeError:
+                    print(f"Skipping invalid JSON line: {line}")
+
+        comments_df = pd.DataFrame(data)
+        comments_df.to_csv(
+            output_path,
+            quoting=csv.QUOTE_NONNUMERIC,
+            escapechar='\\',
+            index=False,
+            encoding='utf-8'
+        )
+
+        print(f"Comments successfully written to {output_path}")
+    def process_posts(input_path, output_path):
+        field_mappings = {
+            "post_id": "id",
+            "title": "title",
+            "content": "selftext",
+            "timestamp": "created_utc",
+            "num_comments": "num_comments",
+            "link": "url"
+        }
+
+        data = []
+
+        # Read the JSON Lines input file line by line and load valid data into a list
+        with open(input_path, 'r', encoding='utf-8') as jsonl_file:
+            for line in jsonl_file:
+                try:
+                    post = json.loads(line.strip())
+                    if post[field_mappings["num_comments"]] < 100:
+                        continue
+                    data.append({
+                        "post_id": post[field_mappings["post_id"]],
+                        "title": post[field_mappings["title"]],
+                        "content": post[field_mappings["content"]],
+                        "timestamp": post[field_mappings["timestamp"]],
+                        "num_comments": post[field_mappings["num_comments"]],
+                        "link": post[field_mappings["link"]]
+                    })
+                except json.JSONDecodeError:
+                    print(f"Skipping invalid JSON line: {line}")
+
+        posts_df = pd.DataFrame(data)
+
+        posts_df.to_csv(
+            output_path,
+            quoting=csv.QUOTE_NONNUMERIC,
+            escapechar='\\',
+            index=False,
+            encoding='utf-8'
+        )
+
+        print(f"Post data successfully written to {output_path}")
 
 
 if __name__ == '__main__':

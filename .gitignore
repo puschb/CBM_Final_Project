@@ -167,3 +167,5 @@ cython_debug/
 *.npy
 
 **/Local Models/**
+
+**/arcticshift/**
