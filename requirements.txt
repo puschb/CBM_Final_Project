@@ -8,6 +8,7 @@ pandas
 transformers
 datasets
 peft
+torch
 
 # For the youtube link & comment scrapper
 google-api-python-client
@@ -21,3 +22,8 @@ unidecode
 scikit-learn
 gensim
 requests
+
+# Mistral Associated
+mistral_inference
+bitsandbytes
+setuptools
