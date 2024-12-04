@@ -25,3 +25,5 @@ requests
 
 # Mistral Associated
 mistral_inference
+bitsandbytes
+setuptools
