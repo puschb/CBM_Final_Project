@@ -3,6 +3,9 @@ import csv
 from collections import deque
 import math
 import random
+import copy
+import json
+
 class Node:
     def __init__(self, comment_id, parent_comment_id, time_stamp_created, comment_text, user, corresponding_post_id, link):
         self.comment_id = comment_id  
@@ -26,6 +29,27 @@ class Node:
             previous_responses.insert(0, cur_node)
             cur_node = cur_node.parent_node
         return previous_responses 
+    
+    def to_dict(self):
+        return {
+            'comment_id': self.comment_id,
+            'parent_comment_id': self.parent_comment_id,
+            'time_stamp_created': self.time_stamp_created,
+            'comment_text': self.comment_text,
+            'user': self.user,
+            'corresponding_post_id': self.corresponding_post_id,
+            'link': self.link,
+            'children': [child.to_dict() for child in self.children]  # Recursively serialize children
+        }
+
+    @classmethod
+    def from_dict(cls, data):
+        node = cls(data['comment_id'], data['parent_comment_id'], data['time_stamp_created'],
+                   data['comment_text'], data['user'], data['corresponding_post_id'], data['link'])
+        for child_data in data['children']:
+            child_node = Node.from_dict(child_data)
+            node.add_child(child_node)
+        return node
 
 
     def __repr__(self, level=0):
@@ -33,8 +57,7 @@ class Node:
         for child in self.children:
             ret += child.__repr__(level + 1)
         return ret
-
-
+   
 class PostTree:
     def __init__(self, path_to_post_data, post_id):
         post_df = pd.read_csv(path_to_post_data,
@@ -110,6 +133,46 @@ class PostTree:
         for root_comment in self.root_comments:
             ret += root_comment.__repr__(1)
         return ret
+    
+    def save_as_json(self, file_path):
+        """Save the post tree and its nodes to a JSON file."""
+        post_data = {
+            'post_id': self.post_id,
+            'title': self.title,
+            'content': self.content,
+            'timestamp': self.timestamp,
+            'num_comments': self.num_comments,
+            'link': self.link,
+            'root_comments': [root.to_dict() for root in self.root_comments]
+        }
+        with open(file_path, 'w', encoding='utf-8') as f:
+            json.dump(post_data, f, indent=4)
+
+    @classmethod
+    def load_from_json(cls, file_path):
+        """Load the post tree and its nodes from a JSON file."""
+        with open(file_path, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+
+        post_tree = cls.__new__(cls)
+        post_tree.post_id = data['post_id']
+        post_tree.title = data['title']
+        post_tree.content = data['content']
+        post_tree.timestamp = data['timestamp']
+        post_tree.num_comments = data['num_comments']
+        post_tree.link = data['link']
+        post_tree.root_comments = [Node.from_dict(root_data) for root_data in data['root_comments']]
+
+        # Link root comments to their children and parent nodes
+        for root in post_tree.root_comments:
+            queue = deque([root])
+            while queue:
+                current_node = queue.popleft()
+                for child in current_node.children:
+                    child.parent_node = current_node
+                    queue.append(child)
+
+        return post_tree
     
 class UserCommentHistories:
     # THE PATH SHOULD BE TO THE UNPRUNED AND CLEANED COMMENTS
