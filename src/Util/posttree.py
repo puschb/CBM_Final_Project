@@ -4,15 +4,15 @@ from collections import deque
 import math
 class Node:
     def __init__(self, comment_id, parent_comment_id, time_stamp_created, comment_text, user, corresponding_post_id, link):
-        self.comment_id = comment_id  # Unique identifier for the comment
-        self.parent_comment_id = parent_comment_id  # ID of the parent comment (None if root)
+        self.comment_id = comment_id  
+        self.parent_comment_id = parent_comment_id 
         self.parent_node = None
-        self.time_stamp_created = time_stamp_created  # Timestamp when the comment was created
-        self.comment_text = comment_text  # Text content of the comment
-        self.user = user  # User who posted the comment
-        self.corresponding_post_id = corresponding_post_id  # ID of the post this comment belongs to
-        self.link = link  # Link to the comment on Reddit
-        self.children = []  # List of child comments
+        self.time_stamp_created = time_stamp_created  
+        self.comment_text = comment_text  
+        self.user = user 
+        self.corresponding_post_id = corresponding_post_id 
+        self.link = link 
+        self.children = []  
 
     def add_child(self, child_node):
         """Add a child comment to this comment."""
@@ -28,7 +28,6 @@ class Node:
 
 
     def __repr__(self, level=0):
-        """Recursively display the comment tree structure."""
         ret = "\t" * level + f"User: {self.user} (ID: {self.comment_id})\n"
         for child in self.children:
             ret += child.__repr__(level + 1)
@@ -54,7 +53,6 @@ class PostTree:
         self.root_comments = []  
 
     def add_comment(self, comment_id, parent_comment_id, time_stamp_created, comment_text, user, link):
-        """Add a comment to the tree."""
         node = Node(comment_id, parent_comment_id, time_stamp_created, comment_text, user, self.post_id, link)
         self.nodes[comment_id] = node
 
@@ -77,13 +75,12 @@ class PostTree:
     
         # Queue for BFS
         queue = deque(root_comments)
-        visited = []  # To store the BFS order of comment_ids
+        visited = [] 
 
         while queue:
             current_comment_id = queue.popleft()
             visited.append(current_comment_id)
 
-            # Find children of the current comment and add them to the queue
             children = df[df['parent_comment_id'] == current_comment_id]['comment_id'].tolist()
             queue.extend(children)
 
@@ -105,7 +102,6 @@ class PostTree:
 
 
     def __repr__(self):
-        """Display the tree structure starting from the post title."""
         ret = f"Post Title: {self.title}\n"
         ret += f"Content: {self.content}\n"
         ret += f"Number of Comments: {self.num_comments}\n"
@@ -117,15 +113,24 @@ class PostTree:
 class UserCommentHistories:
     # THE PATH SHOULD BE TO THE UNPRUNED AND CLEANED COMMENTS
     def __init__(self, path_to_comment_csv, post_id):
+        
         self.post_id = post_id
         comments_df = pd.read_csv(path_to_comment_csv,
             quoting=csv.QUOTE_NONNUMERIC,
             escapechar='\\',
             encoding='utf-8')
-        user_histories_df = comments_df[comments_df['corresponding_post_id'] != self.post_id]
+        
+        users_with_comments_on_post = comments_df[comments_df['corresponding_post_id'] == self.post_id]['user'].unique()
+        user_histories_df = comments_df[
+        (comments_df['corresponding_post_id'] != self.post_id) &  
+        (comments_df['user'].isin(users_with_comments_on_post))   
+        ]
+
         self.user_histories = user_histories_df.groupby('user')['comment_text'].apply(list).to_dict()
+
     def get_user_history(self, user):
         return self.user_histories[user]
+    
     def __repr__(self):
         return str(self.user_histories)
 
