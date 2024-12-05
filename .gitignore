@@ -168,4 +168,7 @@ cython_debug/
 
 **/Local Models/**
 
-**/arcticshift/**
+r_books_comments.csv
+r_books_comments_large.jsonl
+r_books_posts_large.jsonl
+test.json
