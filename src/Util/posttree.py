@@ -190,7 +190,13 @@ class UserCommentHistories:
         (comments_df['user'].isin(users_with_comments_on_post))   
         ]
 
-        self.user_histories = user_histories_df.groupby('user')['comment_text'].apply(list).to_dict()
+        user_histories = {}
+
+        for user in users_with_comments_on_post:
+            user_history = user_histories_df[user_histories_df['user'] == user]['comment_text'].tolist()
+            user_histories[user] = user_history if user_history else []
+
+        self.user_histories = user_histories
 
     def get_user_history(self, user):
         return self.user_histories[user]
