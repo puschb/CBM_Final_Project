@@ -4,13 +4,9 @@
       "post_title": "string",
       "post_content": "string",
       "previous_comments_on_thread": "string",
-      "user_comment_history": "string"
+      "comment_to_respond_to": "string",
+      "comment_of_interest": "string"
     },
     "comment_id": "string"
-  },
-  "model_config": {
-    "max_tokens": "integer", 
-    "temperature": "float",
-    "eos_id": "integer"
   }
 }

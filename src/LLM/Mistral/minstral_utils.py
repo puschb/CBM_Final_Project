@@ -39,26 +39,22 @@ def zero_shot_json_to_skeleton(input_data):
     Extracts zero_shot_json_to_skeleton json and create prompt to feed into minstral. 
     Returns minstral output in string format.
     """
-    # contrains max_tokens (int), temperature (float), and eos_id (int)
-    model_config = input_data['model_config']    
     
     # extract relevant portion of input
-    prompt = input_data['input']['prompt']
     context = input_data['input']['context']
     comment_id = input_data['input']['comment_id']
-    model_config = input_data['model_config']
     
     # Construct the Mistral prompt
     mistral_prompt = f"""
     [INST] 
-    ["There is a particular user that we want to predict the response of on a Reddit post. Use the following information about this user of to generate an english response:]
+    ["There is a particular user that we want to predict the response of on a Reddit post. Use the user's post, the post information, the comments in the thread, and the user's comment history to generate english response to the comment of interest. If any of this information is None, respond with what is available:]
     [The post's title]: {context['post_title']}
     [The post's content]: {context['post_content']}
     [Previous user comments on the thread]: {context['previous_comments_on_thread']}
     [User's comment history]: {context['user_comment_history']}
+    [Comment of interest]: {context['comment_of_interest']}
     [/INST]
     """
-
     return mistral_prompt
 
 def few_shot_json_to_skeleton(input_data):
@@ -94,16 +90,11 @@ def few_shot_json_to_skeleton(input_data):
                 },
                 "comment_id": "string"
          }
-    }
-
-    # contrains max_tokens (int), temperature (float), and eos_id (int)
-    model_config = input_data['model_config']    
+    }  
     
     # extract relevant portion of input
-    prompt = input_data['input']['prompt']
     context = input_data['input']['context']
     comment_id = input_data['input']['comment_id']
-    model_config = input_data['model_config']
     
     # Construct the Mistral prompt
     mistral_prompt = f"""
@@ -131,6 +122,7 @@ def few_shot_json_to_skeleton(input_data):
     [The post's content]: {context['post_content']}
     [Previous user comments on the thread]: {context['previous_comments_on_thread']}
     [User's comment history]: {context['user_comment_history']}
+
     [/INST]
     """
     
