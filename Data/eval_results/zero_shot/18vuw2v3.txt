@@ -1,0 +1,7 @@
+kfws2yr, 0, 0.41
+kfws2yr, 1, 0.30
+kfws2yr, 2, 0.29
+kfws2yr, 3, 0.26
+kfws2yr, 4, 0.21
+kfws2yr, 5, 0.23
+kfws2yr, 6, 0.33

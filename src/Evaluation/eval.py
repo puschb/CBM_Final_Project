@@ -16,7 +16,7 @@ class SimilarityNode:
         self.children.append(child_node)
 
     def __repr__(self, level=0):
-        ret = "\t" * level + f"Comment ID: {self.comment_id}, Similarity: {self.similarity_score}\n"
+        ret = "\t" * level + f"Comment ID: {self.comment_id}, Level: {level}, Similarity: {self.similarity_score}\n"
         for child in self.children:
             ret += child.__repr__(level + 1)
         return ret
@@ -27,7 +27,6 @@ class EvalSimilarity:
 
         self.org_posttree = original_posttree
         self.gen_posttree = gen_posttree
-
         self.model = SentenceTransformer('sentence-transformers/all-mpnet-base-v2')
     
     def check_cosinesim(self, sentences):
@@ -74,7 +73,6 @@ class EvalSimilarity:
             
             og_similarity["comment_id"] = onode.comment_id
             og_similarity["parent_comment_id"] = onode.parent_comment_id
-
             og_similarity["similarity_score"] = self.check_cosinesim([onode.comment_text, gnode.comment_text])[0, 1]
 
             similarities.append(og_similarity)

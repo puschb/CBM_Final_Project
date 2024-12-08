@@ -150,7 +150,8 @@ class PostTree:
 
     @classmethod
     def load_from_json(cls, file_path):
-        """Load the post tree and its nodes from a JSON file."""
+        """Load the post tree and its nodes from a JSON file and creates comment tree
+        """
         with open(file_path, 'r', encoding='utf-8') as f:
             data = json.load(f)
 
@@ -201,10 +202,12 @@ class UserCommentHistories:
     def get_user_history(self, user):
         return self.user_histories[user]
     
-    def get_random_user_history(self, user, num_previous_comments = 10):
-      user_comments = self.user_histories[user]
-      return random.sample(user_comments, min(len(user_comments), num_previous_comments))
-    
+    def get_random_user_history(self, user, num_previous_comments=10):
+        if user not in self.user_histories:
+            return []
+        user_comments = self.user_histories[user]
+        return random.sample(user_comments, min(len(user_comments), num_previous_comments))
+
     def __repr__(self):
         return str(self.user_histories)
 

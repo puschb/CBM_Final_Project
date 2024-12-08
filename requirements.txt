@@ -2,6 +2,7 @@
 fastapi
 pydantic
 uvicorn
+seaborn
 
 # For running the model
 pandas
@@ -9,6 +10,7 @@ transformers
 datasets
 peft
 torch
+sentence_transformers
 
 # For the youtube link & comment scrapper
 google-api-python-client
