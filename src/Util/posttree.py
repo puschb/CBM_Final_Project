@@ -64,8 +64,10 @@ class PostTree:
             quoting=csv.QUOTE_NONNUMERIC,
             escapechar='\\',
             encoding='utf-8')
-        post_row = post_df[post_df['post_id'] == post_id].iloc[0].to_dict()
-        
+        filtered_df = post_df[post_df['post_id'] == post_id]
+        if filtered_df.empty:
+            raise ValueError(f"Post ID {post_id} not found in the dataset.")
+        post_row = filtered_df.iloc[0].to_dict()        
 
         self.post_id = post_id 
         self.title = post_row['title']  
@@ -136,6 +138,7 @@ class PostTree:
     
     def save_as_json(self, file_path):
         """Save the post tree and its nodes to a JSON file."""
+
         post_data = {
             'post_id': self.post_id,
             'title': self.title,

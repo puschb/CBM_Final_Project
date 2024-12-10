@@ -5,6 +5,10 @@ from sklearn.metrics.pairwise import cosine_similarity
 import seaborn as sns
 import matplotlib.pyplot as plt
 
+import os
+from collections import deque, defaultdict
+
+
 class SimilarityNode:
     def __init__(self, comment_id, parent_comment_id, similarity_score):
         self.comment_id = comment_id
@@ -39,6 +43,8 @@ class EvalSimilarity:
         if len(sentences) == 1:
             return np.array([[1.0]])
 
+        print(sentences)
+
         embeddings = self.model.encode(sentences)
 
         # Compute and return cosine similarity matrix
@@ -65,18 +71,57 @@ class EvalSimilarity:
         return root_nodes
     
     def compare_comments(self):
-        
         similarities = []
 
         for onode, gnode in zip(self.org_posttree.bfs_generator(), self.gen_posttree.bfs_generator()):
             og_similarity = {}
-            
             og_similarity["comment_id"] = onode.comment_id
             og_similarity["parent_comment_id"] = onode.parent_comment_id
-            og_similarity["similarity_score"] = self.check_cosinesim([onode.comment_text, gnode.comment_text])[0, 1]
+
+            # Ensure original comment_text is a string
+            org_text = str(onode.comment_text) if onode.comment_text is not None else ""
+
+            # Check generated comment_text: if it's a list, ensure all elements are strings; if single, cast to string
+            if isinstance(gnode.comment_text, list):
+                gen_texts = [str(t) if t is not None else "" for t in gnode.comment_text]
+                sentences = [org_text] + gen_texts
+                similarity_matrix = self.check_cosinesim(sentences)
+
+                # The first sentence is the original comment; the rest are generated responses
+                generated_similarities = similarity_matrix[0, 1:]  # Compare original (row=0) to others
+                avg_similarity = np.mean(generated_similarities)
+                og_similarity["similarity_score"] = avg_similarity
+            else:
+                # Single generated text
+                gen_text = str(gnode.comment_text) if gnode.comment_text is not None else ""
+                sentences = [org_text, gen_text]
+                similarity_matrix = self.check_cosinesim(sentences)
+                og_similarity["similarity_score"] = similarity_matrix[0, 1]
 
             similarities.append(og_similarity)
-        
-        similaritree = self._build_tree(similarities)
 
+        similaritree = self._build_tree(similarities)
         return similaritree
+
+    def bfs(self, root, levels, counts, bfs_file):
+        """
+        Perform BFS and calculate the cumulative similarity scores and counts at each level.
+        """
+        with open(bfs_file, "a") as file:
+            queue = deque([(root, 0)])
+
+            while queue:
+                current, depth = queue.popleft()
+
+                levels[depth] += current.similarity_score
+                counts[depth] += 1
+
+                indent = "    " * depth
+                line = (f"{indent}Parent ID: {current.parent_comment_id}, "
+                        f"Comment ID: {current.comment_id}, "
+                        f"Similarity: {current.similarity_score:.2f}")
+                print(line)
+                file.write(line + "\n")
+
+                for child in current.children:
+                    queue.append((child, depth + 1))
