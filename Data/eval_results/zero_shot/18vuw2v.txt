@@ -1,8 +1,0 @@
-Average Similarity Scores by Depth:
-Depth 0: Average Similarity Score = 0.41
-Depth 1: Average Similarity Score = 0.30
-Depth 2: Average Similarity Score = 0.29
-Depth 3: Average Similarity Score = 0.26
-Depth 4: Average Similarity Score = 0.21
-Depth 5: Average Similarity Score = 0.23
-Depth 6: Average Similarity Score = 0.33
