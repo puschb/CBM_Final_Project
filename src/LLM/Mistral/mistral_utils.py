@@ -117,7 +117,8 @@ class Mistral:
         model = AutoModelForCausalLM.from_pretrained(
             self.model_name,
             torch_dtype=torch.bfloat16,
-            quantization_config=bnb_config
+            device_map = "auto"
+            #quantization_config=bnb_config
         )
         return model
 
@@ -139,6 +140,7 @@ class Mistral:
             padding=True,    
             truncation=True   
         )
+        encoded = encoded.to('cuda')
 
         encoded = encoded.to("cuda")
 
@@ -201,6 +203,8 @@ class Mistral:
                         prompt = mistral_prompt.zero_shot_prompt()
                     elif test_type == "few_shot":
                         prompt = mistral_prompt.few_shot_prompt()
+                    elif test_type == "instruct":
+                        prompt = mistral_prompt.zero_shot_prompt()
                     elif test_type == "benchmark": 
                         prompt = mistral_prompt.benchmark_prompt()
                     else:

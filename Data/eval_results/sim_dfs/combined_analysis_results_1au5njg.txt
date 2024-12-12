@@ -1,0 +1,126 @@
+Statistical Test Results:
+
+Overall Multi-Group Comparisons:
+  Average Similarity:
+    ANOVA: statistic = 20.676629674868195, p-value = 2.0778079786243105e-09
+    Kruskal-Wallis: statistic = 47.70375871939509, p-value = 4.377845302321869e-11
+  Standard Deviation:
+    ANOVA: statistic = 151.18303177450352, p-value = 7.556032045532407e-54
+    Kruskal-Wallis: statistic = 196.9559933314808, p-value = 1.7043134022494855e-43
+
+Overall Pairwise Comparisons:
+  zero_shot vs few_shot:
+    Average Similarity:
+      Paired t-test: t-statistic = 4.992870031056948, p-value = 1.296610535898171e-06
+      Wilcoxon test: statistic = 5930.0, p-value = 4.939565562103189e-07
+    Standard Deviation:
+      Paired t-test: t-statistic = -4.863355680448822, p-value = 2.3401195318659324e-06
+      Wilcoxon test: statistic = 7430.0, p-value = 0.0013846685117222938
+
+  zero_shot vs instruct:
+    Average Similarity:
+      Paired t-test: t-statistic = 13.60727395482381, p-value = 3.0571589575790874e-30
+      Wilcoxon test: statistic = 1465.0, p-value = 1.0858886056654905e-25
+    Standard Deviation:
+      Paired t-test: t-statistic = -20.45601946912815, p-value = 8.063375027422315e-51
+      Wilcoxon test: statistic = 555.0, p-value = 4.681606463304958e-31
+
+  few_shot vs instruct:
+    Average Similarity:
+      Paired t-test: t-statistic = 7.004589086267742, p-value = 3.73461031298953e-11
+      Wilcoxon test: statistic = 4075.0, p-value = 3.0367652392143144e-13
+    Standard Deviation:
+      Paired t-test: t-statistic = -16.28941926516298, p-value = 1.807525503552325e-38
+      Wilcoxon test: statistic = 1120.0, p-value = 1.1593424716754932e-27
+
+Depth-Based Comparisons:
+Depth 0:
+  Multi-Group Tests:
+    ANOVA: statistic = 19.72506004803843, p-value = 5.244666999201539e-06
+    Kruskal-Wallis: statistic = 17.392887402452626, p-value = 0.00016717929457995317
+  Pairwise Comparisons:
+    zero_shot vs few_shot:
+      Paired t-test: t-statistic = -2.526269489486833, p-value = 0.032433288434634194
+      Wilcoxon test: statistic = 9.0, p-value = 0.064453125
+    zero_shot vs instruct:
+      Paired t-test: t-statistic = 3.8562072024480454, p-value = 0.003869426154708693
+      Wilcoxon test: statistic = 3.0, p-value = 0.009765625
+    few_shot vs instruct:
+      Paired t-test: t-statistic = 7.003234003406535, p-value = 6.302203491538351e-05
+      Wilcoxon test: statistic = 0.0, p-value = 0.001953125
+
+Depth 1:
+  Multi-Group Tests:
+    ANOVA: statistic = 6.486544926319438, p-value = 0.0019969836680412594
+    Kruskal-Wallis: statistic = 5.633804028527985, p-value = 0.059790887399321875
+  Pairwise Comparisons:
+    zero_shot vs few_shot:
+      Paired t-test: t-statistic = 2.76334629062914, p-value = 0.008036568937402039
+      Wilcoxon test: statistic = 340.5, p-value = 0.011109688725260015
+    zero_shot vs instruct:
+      Paired t-test: t-statistic = 3.8562238990410873, p-value = 0.000336059794882547
+      Wilcoxon test: statistic = 272.5, p-value = 0.0007178588777204139
+    few_shot vs instruct:
+      Paired t-test: t-statistic = 2.1060601584067347, p-value = 0.040345515122479754
+      Wilcoxon test: statistic = 449.5, p-value = 0.07082612042920822
+
+Depth 2:
+  Multi-Group Tests:
+    ANOVA: statistic = 1.1940336382290686, p-value = 0.30542517124933993
+    Kruskal-Wallis: statistic = 2.7615679790118017, p-value = 0.25138139540911086
+  Pairwise Comparisons:
+    zero_shot vs few_shot:
+      Paired t-test: t-statistic = 0.967149731736458, p-value = 0.33741707800813336
+      Wilcoxon test: statistic = 800.5, p-value = 0.39912264511460216
+    zero_shot vs instruct:
+      Paired t-test: t-statistic = 1.8659785328943852, p-value = 0.06701765634380911
+      Wilcoxon test: statistic = 572.5, p-value = 0.028395803811974398
+    few_shot vs instruct:
+      Paired t-test: t-statistic = 1.0802327186267497, p-value = 0.28443460725332903
+      Wilcoxon test: statistic = 691.0, p-value = 0.20276392092616546
+
+Depth 3:
+  Multi-Group Tests:
+    ANOVA: statistic = 1.5937587258906873, p-value = 0.20753917235021418
+    Kruskal-Wallis: statistic = 1.916655050629707, p-value = 0.38353380044124236
+  Pairwise Comparisons:
+    zero_shot vs few_shot:
+      Paired t-test: t-statistic = 2.3736570824154724, p-value = 0.02263399265188261
+      Wilcoxon test: statistic = 242.5, p-value = 0.03954095991791672
+    zero_shot vs instruct:
+      Paired t-test: t-statistic = 0.7856245676331025, p-value = 0.436834616523638
+      Wilcoxon test: statistic = 305.5, p-value = 0.48766441109557
+    few_shot vs instruct:
+      Paired t-test: t-statistic = -1.1998695352644682, p-value = 0.23742845808193258
+      Wilcoxon test: statistic = 334.5, p-value = 0.43853900358011566
+
+Depth 4:
+  Multi-Group Tests:
+    ANOVA: statistic = 3.091782119257565, p-value = 0.053114846780820846
+    Kruskal-Wallis: statistic = 6.795309978295954, p-value = 0.033451622473391715
+  Pairwise Comparisons:
+    zero_shot vs few_shot:
+      Paired t-test: t-statistic = -2.812270789784279, p-value = 0.011122186816282527
+      Wilcoxon test: statistic = 35.0, p-value = 0.015744918061158977
+    zero_shot vs instruct:
+      Paired t-test: t-statistic = 2.8928102414934886, p-value = 0.009324803858860708
+      Wilcoxon test: statistic = 41.0, p-value = 0.01531219482421875
+    few_shot vs instruct:
+      Paired t-test: t-statistic = 4.381955284516027, p-value = 0.00032061199352357444
+      Wilcoxon test: statistic = 17.0, p-value = 0.0003948211669921875
+
+Depth 5:
+  Multi-Group Tests:
+    ANOVA: statistic = 2.2555838271526087, p-value = 0.11408937648773822
+    Kruskal-Wallis: statistic = 7.152201362814641, p-value = 0.02798460668006737
+  Pairwise Comparisons:
+    zero_shot vs few_shot:
+      Paired t-test: t-statistic = 1.6561347023207298, p-value = 0.11411709359264678
+      Wilcoxon test: statistic = 65.0, p-value = 0.14290618896484375
+    zero_shot vs instruct:
+      Paired t-test: t-statistic = 2.51996731888977, p-value = 0.020843186311438368
+      Wilcoxon test: statistic = 39.0, p-value = 0.024209362675438408
+    few_shot vs instruct:
+      Paired t-test: t-statistic = 1.2271574881644338, p-value = 0.2347522693865724
+      Wilcoxon test: statistic = 77.5, p-value = 0.3299827575683594
+

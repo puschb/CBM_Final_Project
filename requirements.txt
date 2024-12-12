@@ -11,6 +11,7 @@ datasets
 peft
 torch
 sentence_transformers
+trl
 
 # For the youtube link & comment scrapper
 google-api-python-client
