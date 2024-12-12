@@ -21,10 +21,23 @@ class MistralPrompt:
         self.previous_comments_on_thread = previous_comments_on_thread
         self.comment_of_interest = comment_of_interest
 
+    def benchmark_prompt(self):
+        if self.comment_of_interest == []: 
+            self.comment_of_interest == "".join(self.post_title, self.post_content)
+
+        mistral_prompt = f"""
+        [INST] 
+        You are mimicking a real reddit user. Your task is to respond to the comment of interest. Your response should be in english and not include any explanation or notes about your response:
+        Comment of interest: {self.comment_of_interest}
+        <<ANSWER>>
+        [/INST]
+        """
+        return mistral_prompt
+
     def zero_shot_prompt(self):
         mistral_prompt = f"""
         [INST] 
-        You are mimicking a real reddit user. Your task is to respond to the comment of interest based on the post title and post information, the comments in the thread, and the user's comment history that you are mimicking. If there is no comment of interest, respond to the post. Your response should be in english, mimic the reddit user, and not include any explanation or notes about your response:
+        You are mimicking a real reddit user. Your task is to respond to the comment of interest based on the post title and post information, the comments in the thread, and the user's comment history that you are mimicking. If there is no comment of interest, respond to the post.  Your response should be in english, mimic the reddit user, and not include any explanation or notes about your response:
         The post's title: {self.post_title}
         The post's content: {self.post_content}
         User's comment history: {self.user_comment_history}
@@ -41,7 +54,7 @@ class MistralPrompt:
         mistral_prompt = f"""
         </s>
         [INST] 
-        You are mimicking a real reddit user. Your task is to respond to the comment of interest based on the post title and post information, the comments in the thread, and the user's comment history that you are mimicking. If there is no comment of interest, respond to the post. Your response should be in english, mimic the reddit user, and not include any explanation or notes about your response:
+        You are mimicking a real reddit user. Your task is to respond to the comment of interest based on the post title and post information,  the comments in the thread, and the user's comment history that you are mimicking. If there is no comment of interest, respond to the post. Your response should be in english, mimic the reddit user, and not include any explanation or notes about your response:
         For instance, the following:
         The post's title: What do I do with old books?
         The post's content: So I’ve got 6 shelves worth of children’s books that are aimed at 8-13y kids that I need to get rid off to make space for my current books and revision resources. I’ve tried to sell them on eBay, but it really didn’t work and since a lot of them are singular and not collection, no one really wanted them. I don’t want them to got to waste since they are in great condition, I’m considering charity as my last resort as I’ve been told they throw away many books if they don’t sell. I don’t mind not making any money from it but I really do want them to be appreciated by people.
@@ -127,6 +140,8 @@ class Mistral:
             truncation=True   
         )
 
+        encoded = encoded.to("cuda")
+
         generated_ids = self.model.generate(
             **encoded,
             max_new_tokens=200,
@@ -141,7 +156,7 @@ class Mistral:
 
 
     def process_post_tree(self, post_tree, user_histories, data_basepath, test_type):
-        if test_type not in ['zero_shot', 'few_shot', 'instruct']:
+        if test_type not in ['benchmark', 'zero_shot', 'few_shot', 'instruct']:
             raise ValueError(f"Invalid test_type provided: {test_type}. Valid types: zero_shot, few_shot, instruct")
 
         new_post_tree_file = os.path.abspath(
@@ -186,6 +201,8 @@ class Mistral:
                         prompt = mistral_prompt.zero_shot_prompt()
                     elif test_type == "few_shot":
                         prompt = mistral_prompt.few_shot_prompt()
+                    elif test_type == "benchmark": 
+                        prompt = mistral_prompt.benchmark_prompt()
                     else:
                         raise ValueError("Invalid test_type or not implemented")
 
