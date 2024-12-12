@@ -1,13 +1,17 @@
-from sentence_transformers import SentenceTransformer
-import numpy as np
-from sklearn.metrics.pairwise import cosine_similarity
-
-import seaborn as sns
-import matplotlib.pyplot as plt
-
 import os
 from collections import deque, defaultdict
 
+import numpy as np
+import pandas as pd
+from sklearn.metrics.pairwise import cosine_similarity
+from scipy.stats import sem
+
+from sentence_transformers import SentenceTransformer
+
+import matplotlib.pyplot as plt
+import matplotlib.colors as mcolors
+import seaborn as sns
+import networkx as nx
 
 class SimilarityNode:
     def __init__(self, comment_id, parent_comment_id, similarity_score):
@@ -125,3 +129,251 @@ class EvalSimilarity:
 
                 for child in current.children:
                     queue.append((child, depth + 1))
+
+class PlotSimilarity:
+
+    def __init__(self, folder_path):
+        self.folder_path = folder_path
+        self.all_files = self._get_all_files()
+
+    def _get_all_files(self):
+        all_files = os.listdir(self.folder_path)
+        files = [
+            os.path.join(self.folder_path, f)
+            for f in all_files
+            if f.endswith('.txt') and not f.endswith('_results.txt')
+        ]
+        return files
+    
+    def build_similarity_tree(self, file_path):
+        """
+        Given a file path, build a similarity tree of type SimilarityNode.
+        """
+        
+        nodes = {}  
+        roots = []
+
+        with open(file_path, 'r') as file:
+            for line in file:
+                line = line.strip()
+                if not line:
+                    continue
+
+                parts = line.split(", ")
+                parent_id = parts[0].split(": ")[1].strip() if "Parent ID" in parts[0] else None
+                comment_id = parts[1].split(": ")[1].strip()
+                similarity = float(parts[2].split(": ")[1])
+
+                node = SimilarityNode(comment_id, parent_id, similarity)
+                nodes[comment_id] = node
+
+                if parent_id and parent_id != "None": 
+                    if parent_id in nodes:
+                        nodes[parent_id].add_child(node)
+                else:
+                    roots.append(node)
+
+        return roots[0] if len(roots) == 1 else roots
+    
+    def get_deepest_tree(self):
+        
+        """
+        returns a list of roots of the deepest trees
+        we do N runs per post, so len(roots) = N.
+        """
+
+        def calculate_depth(node):
+            if not node.children:
+                return 1
+            return 1 + max(calculate_depth(child) for child in node.children)
+
+        deepest_tree_roots = []
+
+        files = self.all_files
+
+        # iterate over each file in the folder.
+        for file in files:
+            
+            # buiild the sim tree first,
+            roots = self.build_similarity_tree(file)
+
+            if isinstance(roots, SimilarityNode):
+                roots = [roots]
+
+            deepest_tree = None
+            max_depth = 0
+
+            for root in roots:
+                depth = calculate_depth(root)
+                if depth > max_depth:
+                    max_depth = depth
+                    deepest_tree = root
+            
+            deepest_tree_roots.append(deepest_tree)
+
+        return deepest_tree_roots
+    
+    def calculate_avg_similarity(self, trees):
+        """
+        Takes in a list of SimilarityNode trees, and 
+        returns another SimilarityNode tree with the avg scores,
+        along with a dataframe containing all sim. scores.
+        """
+
+        def traverse_tree(node, scores_dict):
+            if node.comment_id not in scores_dict:
+                scores_dict[node.comment_id] = {"scores": [], "parent_id": node.parent_comment_id}
+            scores_dict[node.comment_id]["scores"].append(node.similarity_score)
+            for child in node.children:
+                traverse_tree(child, scores_dict)
+
+        scores_dict = defaultdict(lambda: {"scores": [], "parent_id": None})
+        
+        for tree in trees:
+            traverse_tree(tree, scores_dict)
+
+        avg_scores = {}
+        similarity_data = {"Comment ID": [], "Parent ID": [], "Similarity Scores": [], "Average Similarity": []}
+        
+        for comment_id, data in scores_dict.items():
+            avg_score = sum(data["scores"]) / len(data["scores"])
+            avg_scores[comment_id] = avg_score
+            
+            similarity_data["Comment ID"].append(comment_id)
+            similarity_data["Parent ID"].append(data["parent_id"])
+            similarity_data["Similarity Scores"].append(data["scores"])
+            similarity_data["Average Similarity"].append(avg_score)
+
+        similarity_df = pd.DataFrame(similarity_data)
+
+        nodes = {}
+        root_candidates = []
+
+        for comment_id, avg_score in avg_scores.items():
+            parent_id = scores_dict[comment_id]["parent_id"]
+            node = SimilarityNode(comment_id, parent_id, avg_score)
+            nodes[comment_id] = node
+
+            if parent_id is None or parent_id == "None":
+                root_candidates.append(node)
+            elif parent_id in nodes:
+                nodes[parent_id].add_child(node)
+
+        root = root_candidates[0] if root_candidates else None
+
+        return root, similarity_df
+
+    def calculate_tree_layout(self, graph, root):
+        """
+        Calculate a tree-like layout for the graph manually.
+        Nodes are placed in hierarchical layers based on depth.
+        """
+        levels = {}  # To store nodes by depth level
+        visited = set()
+
+        def assign_levels(node, depth=0):
+            if node in visited:
+                return
+            visited.add(node)
+            if depth not in levels:
+                levels[depth] = []
+            levels[depth].append(node)
+            for neighbor in graph.successors(node):  # Traverse children
+                assign_levels(neighbor, depth + 1)
+
+        # Start from the root and assign levels
+        assign_levels(root)
+
+        # Assign positions based on levels
+        pos = {}
+        max_width = max(len(nodes) for nodes in levels.values())  # Max nodes in any level
+        for depth, nodes in levels.items():
+            x_positions = range(-max_width // 2, max_width // 2, max(1, max_width // len(nodes)))
+            for i, node in enumerate(nodes):
+                pos[node] = (x_positions[i], -depth)  # x: position in level, y: depth level
+        return pos
+
+    def plot_similarity_tree(self, tree, exp_name, post_id):
+        """
+        Takes a tree and plots it.
+        """
+
+        def build_graph(node, graph):
+            graph.add_node(node.comment_id, similarity=node.similarity_score)
+            for child in node.children:
+                graph.add_edge(node.comment_id, child.comment_id)
+                build_graph(child, graph)
+
+        graph = nx.DiGraph()
+
+        build_graph(tree, graph)
+
+        # Get positions for nodes using a custom layout
+        pos = self.calculate_tree_layout(graph, tree.comment_id)
+
+        similarities = nx.get_node_attributes(graph, 'similarity')
+        similarity_values = list(similarities.values())
+
+        norm = mcolors.Normalize(vmin=min(similarity_values), vmax=max(similarity_values))
+        cmap = plt.cm.Blues 
+        node_colors = [cmap(norm(similarities[node])) for node in graph.nodes]
+
+        fig, ax = plt.subplots(figsize=(12, 8))
+        nx.draw(
+            graph,
+            pos,
+            ax=ax,
+            with_labels=True,
+            node_size=1500,
+            node_color=node_colors,
+            font_size=8
+        )
+
+        plt.title(f"Tree with average similarity for post {post_id}, built using {exp_name}")
+
+        sm = plt.cm.ScalarMappable(cmap=cmap, norm=norm)
+        sm.set_array([])
+        cbar = plt.colorbar(sm, ax=ax)
+        cbar.set_label("Similarity Score", rotation=270, labelpad=15)
+        plt.show()
+
+    def plot_avg_similarity(self, df, exp_name, post_id):
+        """
+        Plot the average similarity score per depth level. 
+        """
+
+        def calculate_depth(row, depth_dict):
+            if row["Parent ID"] == "None":
+                return 0
+            if row["Parent ID"] in depth_dict:
+                return depth_dict[row["Parent ID"]] + 1
+            return 0
+
+        depth_dict = {}
+        
+        for idx, row in df.iterrows():
+            depth_dict[row["Comment ID"]] = calculate_depth(row, depth_dict)
+
+        df["Depth"] = df["Comment ID"].map(depth_dict)
+
+        df["Similarity Scores"] = df["Similarity Scores"].apply(
+            lambda x: eval(x) if isinstance(x, str) else x
+        )
+
+        exploded_df = df.explode("Similarity Scores")
+        exploded_df["Similarity Scores"] = exploded_df["Similarity Scores"].astype(float)
+
+        plt.figure(figsize=(10, 6))
+        sns.lineplot(
+            data=exploded_df,
+            x="Depth",
+            y="Similarity Scores",
+            errorbar="sd", 
+            marker="o"
+        )
+        
+        plt.title(f"Avg similarity per depth for Post {post_id}, built using {exp_name}")
+        plt.xlabel("Depth")
+        plt.ylabel("Average Similarity Score")
+        plt.grid(True)
+        plt.show()
