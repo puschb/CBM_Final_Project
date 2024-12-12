@@ -4,6 +4,7 @@ from collections import deque, defaultdict
 import numpy as np
 import pandas as pd
 from sklearn.metrics.pairwise import cosine_similarity
+from scipy.stats import f_oneway, kruskal, ttest_rel, wilcoxon
 from scipy.stats import sem
 
 from sentence_transformers import SentenceTransformer
@@ -233,16 +234,24 @@ class PlotSimilarity:
             traverse_tree(tree, scores_dict)
 
         avg_scores = {}
-        similarity_data = {"Comment ID": [], "Parent ID": [], "Similarity Scores": [], "Average Similarity": []}
-        
+        similarity_data = {
+            "Comment ID": [], 
+            "Parent ID": [], 
+            "Similarity Scores": [], 
+            "Average Similarity": [],
+            "Standard Deviation": []
+        }
+
         for comment_id, data in scores_dict.items():
             avg_score = sum(data["scores"]) / len(data["scores"])
+            std_dev = np.std(data["scores"], ddof=0)  # Use ddof=0 for population standard deviation
             avg_scores[comment_id] = avg_score
             
             similarity_data["Comment ID"].append(comment_id)
             similarity_data["Parent ID"].append(data["parent_id"])
             similarity_data["Similarity Scores"].append(data["scores"])
             similarity_data["Average Similarity"].append(avg_score)
+            similarity_data["Standard Deviation"].append(std_dev)
 
         similarity_df = pd.DataFrame(similarity_data)
 
@@ -262,6 +271,9 @@ class PlotSimilarity:
         root = root_candidates[0] if root_candidates else None
 
         return root, similarity_df
+
+    def save_df(self, similarity_df, path):
+        similarity_df.to_csv(path, index=False)
 
     def calculate_tree_layout(self, graph, root):
         """
@@ -377,3 +389,125 @@ class PlotSimilarity:
         plt.ylabel("Average Similarity Score")
         plt.grid(True)
         plt.show()
+
+    def load_and_preprocess_data(self, directory, post_id, experiments):
+        
+        def calculate_depth(row, depth_dict):
+            if row["Parent ID"] == "None":
+                return 0
+            if row["Parent ID"] in depth_dict:
+                return depth_dict[row["Parent ID"]] + 1
+            return 0
+
+        dataframes = {}
+        for exp in experiments:
+            target_pattern = f"df_{exp}_{post_id}.csv"
+            matching_files = [
+                file for file in os.listdir(directory) if file == target_pattern
+            ]
+            if matching_files:
+                file_path = os.path.join(directory, matching_files[0])
+                df = pd.read_csv(file_path)
+
+                # Calculate depths
+                depth_dict = {}
+                for idx, row in df.iterrows():
+                    depth_dict[row["Comment ID"]] = calculate_depth(row, depth_dict)
+                df["Depth"] = df["Comment ID"].map(depth_dict)
+
+                # Process similarity scores
+                df["Similarity Scores"] = df["Similarity Scores"].apply(
+                    lambda x: eval(x) if isinstance(x, str) else x
+                )
+                exploded_df = df.explode("Similarity Scores")
+                exploded_df["Similarity Scores"] = exploded_df["Similarity Scores"].astype(float)
+                
+                dataframes[exp] = exploded_df
+            else:
+                print(f"File for experiment '{exp}' and post ID '{post_id}' not found.")
+                return None
+        return dataframes
+
+    def perform_tests(self, dataframes, output_file):
+        experiments = list(dataframes.keys())
+
+        with open(output_file, "w") as f:
+            f.write("Statistical Test Results:\n\n")
+
+            # Overall Multi-Group Comparisons
+            avg_similarities = [dataframes[exp]["Average Similarity"] for exp in experiments]
+            std_devs = [dataframes[exp]["Standard Deviation"] for exp in experiments]
+
+            f.write("Overall Multi-Group Comparisons:\n")
+            anova_sim_stat, anova_sim_p_value = f_oneway(*avg_similarities)
+            kruskal_sim_stat, kruskal_sim_p_value = kruskal(*avg_similarities)
+            f.write(f"  Average Similarity:\n")
+            f.write(f"    ANOVA: statistic = {anova_sim_stat}, p-value = {anova_sim_p_value}\n")
+            f.write(f"    Kruskal-Wallis: statistic = {kruskal_sim_stat}, p-value = {kruskal_sim_p_value}\n")
+
+            anova_sd_stat, anova_sd_p_value = f_oneway(*std_devs)
+            kruskal_sd_stat, kruskal_sd_p_value = kruskal(*std_devs)
+            f.write(f"  Standard Deviation:\n")
+            f.write(f"    ANOVA: statistic = {anova_sd_stat}, p-value = {anova_sd_p_value}\n")
+            f.write(f"    Kruskal-Wallis: statistic = {kruskal_sd_stat}, p-value = {kruskal_sd_p_value}\n\n")
+
+            # Overall Pairwise Comparisons
+            f.write("Overall Pairwise Comparisons:\n")
+            for i, exp1 in enumerate(experiments):
+                for exp2 in experiments[i + 1:]:
+                    sim1 = dataframes[exp1]["Average Similarity"]
+                    sim2 = dataframes[exp2]["Average Similarity"]
+                    sd1 = dataframes[exp1]["Standard Deviation"]
+                    sd2 = dataframes[exp2]["Standard Deviation"]
+
+                    # Paired t-tests and Wilcoxon tests
+                    t_stat_sim, t_p_sim = ttest_rel(sim1, sim2)
+                    w_stat_sim, w_p_sim = wilcoxon(sim1, sim2)
+                    t_stat_sd, t_p_sd = ttest_rel(sd1, sd2)
+                    w_stat_sd, w_p_sd = wilcoxon(sd1, sd2)
+
+                    f.write(f"  {exp1} vs {exp2}:\n")
+                    f.write(f"    Average Similarity:\n")
+                    f.write(f"      Paired t-test: t-statistic = {t_stat_sim}, p-value = {t_p_sim}\n")
+                    f.write(f"      Wilcoxon test: statistic = {w_stat_sim}, p-value = {w_p_sim}\n")
+                    f.write(f"    Standard Deviation:\n")
+                    f.write(f"      Paired t-test: t-statistic = {t_stat_sd}, p-value = {t_p_sd}\n")
+                    f.write(f"      Wilcoxon test: statistic = {w_stat_sd}, p-value = {w_p_sd}\n\n")
+
+            # Depth-Based Comparisons
+            f.write("Depth-Based Comparisons:\n")
+            depths = set.union(*[set(df["Depth"]) for df in dataframes.values()])
+            for depth in sorted(depths):
+                similarities_by_exp = {
+                    exp: df[df["Depth"] == depth]["Similarity Scores"].dropna().tolist()
+                    for exp, df in dataframes.items()
+                }
+                if any(len(similarities) == 0 for similarities in similarities_by_exp.values()):
+                    continue
+
+                f.write(f"Depth {depth}:\n")
+                anova_stat, anova_p = f_oneway(*similarities_by_exp.values())
+                kruskal_stat, kruskal_p = kruskal(*similarities_by_exp.values())
+                f.write(f"  Multi-Group Tests:\n")
+                f.write(f"    ANOVA: statistic = {anova_stat}, p-value = {anova_p}\n")
+                f.write(f"    Kruskal-Wallis: statistic = {kruskal_stat}, p-value = {kruskal_p}\n")
+                f.write(f"  Pairwise Comparisons:\n")
+                exp_list = list(similarities_by_exp.keys())
+                for i, exp1 in enumerate(exp_list):
+                    for exp2 in exp_list[i + 1:]:
+                        sim1 = similarities_by_exp[exp1]
+                        sim2 = similarities_by_exp[exp2]
+                        t_stat, t_p = ttest_rel(sim1, sim2)
+                        w_stat, w_p = wilcoxon(sim1, sim2)
+                        f.write(f"    {exp1} vs {exp2}:\n")
+                        f.write(f"      Paired t-test: t-statistic = {t_stat}, p-value = {t_p}\n")
+                        f.write(f"      Wilcoxon test: statistic = {w_stat}, p-value = {w_p}\n")
+                f.write("\n")
+
+        print(f"Results written to {output_file}")
+
+    def run_combined_analysis(self, directory, post_id, experiments):
+        dataframes = self.load_and_preprocess_data(directory, post_id, experiments)
+        if dataframes:
+            output_file = os.path.join(directory, f"combined_analysis_results_{post_id}.txt")
+            self.perform_tests(dataframes, output_file)
