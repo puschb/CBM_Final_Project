@@ -206,7 +206,7 @@ class UserCommentHistories:
         return self.user_histories[user]
     
     def get_random_user_history(self, user, num_previous_comments=10):
-        if user not in self.user_histories:
+        if not user in self.user_histories:
             return []
         user_comments = self.user_histories[user]
         return random.sample(user_comments, min(len(user_comments), num_previous_comments))
