@@ -176,6 +176,32 @@ class PlotSimilarity:
 
         return roots[0] if len(roots) == 1 else roots
     
+    def calculate_average_similarity(self):
+        """
+        Calculate the average similarity across all files in self.all_files.
+        """
+        def traverse_and_collect_similarities(node, similarities):
+            """Recursively traverse the tree and collect similarity scores."""
+            similarities.append(node.similarity_score)
+            for child in node.children:
+                traverse_and_collect_similarities(child, similarities)
+
+        all_similarities = []
+        for file_path in self.all_files:
+            roots = self.build_similarity_tree(file_path)
+
+            if isinstance(roots, SimilarityNode):  # Single tree root
+                roots = [roots]
+
+            for root in roots:
+                traverse_and_collect_similarities(root, all_similarities)
+
+        # Calculate and return the average similarity
+        if not all_similarities:  # Handle case where no nodes are present
+            return 0.0
+
+        return sum(all_similarities) / len(all_similarities)
+
     def get_deepest_tree(self):
         
         """
@@ -389,6 +415,28 @@ class PlotSimilarity:
         plt.ylabel("Average Similarity Score")
         plt.grid(True)
         plt.show()
+
+    def compute_t_tests_from_df(self, df, output_file):
+        """
+        Computes paired t-tests between all pairs of columns in a DataFrame.
+        """
+        # Ensure the first column (post_id) is excluded from analysis
+        columns_to_compare = df.columns[1:]  # Exclude the "post_id" column
+
+        # Perform paired t-tests between each pair of columns
+        t_test_results = {
+            f"{col1} vs {col2}": ttest_rel(df[col1], df[col2]).pvalue
+            for i, col1 in enumerate(columns_to_compare)
+            for col2 in columns_to_compare[i + 1:]
+        }
+
+        # Write results to a file
+        with open(output_file, 'w') as file:
+            file.write("Paired t-test Results:\n")
+            for comparison, p_value in t_test_results.items():
+                file.write(f"{comparison}: p-value = {p_value:.4f}\n")
+
+        print(f"T-test results written to {output_file}")
 
     def load_and_preprocess_data(self, directory, post_id, experiments):
         
