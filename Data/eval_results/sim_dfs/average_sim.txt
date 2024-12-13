@@ -1,7 +1,7 @@
 Paired t-test Results:
-benchmark vs zero_shot: p-value = 0.5940
-benchmark vs few_shot: p-value = 0.5438
-benchmark vs instruct: p-value = 0.4998
+benchmark vs zero_shot: p-value = 0.0053
+benchmark vs few_shot: p-value = 0.0205
+benchmark vs instruct: p-value = 0.0609
 zero_shot vs few_shot: p-value = 0.0356
 zero_shot vs instruct: p-value = 0.0233
 few_shot vs instruct: p-value = 0.0193
