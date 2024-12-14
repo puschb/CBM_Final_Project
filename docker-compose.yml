@@ -1,7 +1,0 @@
-services:
-  app:
-    build: .
-    container_name: CBM_dev
-    command: tail -f /dev/null # continuously follow a file that will never have new content ... need it to keep container running
-    volumes:
-      - .:/code

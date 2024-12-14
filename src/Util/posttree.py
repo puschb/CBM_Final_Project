@@ -112,8 +112,6 @@ class PostTree:
             comment_row = df[df['comment_id'] == comment].iloc[0].to_dict()
             if not isinstance(comment_row['parent_comment_id'], str) and math.isnan(comment_row['parent_comment_id']):
                 comment_row['parent_comment_id'] = None
-            else:
-                pass
             self.add_comment(comment, comment_row['parent_comment_id'], comment_row['time_stamp_created'], comment_row['comment_text'],
                              comment_row['user'],comment_row['link'])
     
