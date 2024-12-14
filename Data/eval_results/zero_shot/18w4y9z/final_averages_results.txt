@@ -1,0 +1,11 @@
+Final Average Similarity Scores by Depth (across all 10 generated trees):
+Depth 0: Average Similarity Score = 0.35, Level Standard Deviation = 0.00
+Depth 1: Average Similarity Score = 0.36, Level Standard Deviation = 0.00
+Depth 2: Average Similarity Score = 0.35, Level Standard Deviation = 0.00
+Depth 3: Average Similarity Score = 0.24, Level Standard Deviation = 0.00
+Depth 4: Average Similarity Score = 0.28, Level Standard Deviation = 0.00
+Depth 5: Average Similarity Score = 0.40, Level Standard Deviation = 0.00
+Depth 6: Average Similarity Score = 0.35, Level Standard Deviation = 0.00
+Depth 7: Average Similarity Score = 0.28, Level Standard Deviation = 0.00
+Depth 8: Average Similarity Score = 0.34, Level Standard Deviation = 0.00
+Standard Deviation of Semantic Simularity Across All Levels of the Post: 0.04836055492193998

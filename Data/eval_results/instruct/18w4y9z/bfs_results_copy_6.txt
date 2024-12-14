@@ -1,0 +1,257 @@
+Parent ID: None, Comment ID: kfvhoju, Similarity: 0.29
+    Parent ID: kfvhoju, Comment ID: kfvm2cw, Similarity: 0.48
+    Parent ID: kfvhoju, Comment ID: kfvpkek, Similarity: 0.65
+    Parent ID: kfvhoju, Comment ID: kfvq1a5, Similarity: 0.09
+    Parent ID: kfvhoju, Comment ID: kfvqr9x, Similarity: 0.46
+    Parent ID: kfvhoju, Comment ID: kfvub5x, Similarity: 0.12
+    Parent ID: kfvhoju, Comment ID: kfvw9yd, Similarity: 0.16
+    Parent ID: kfvhoju, Comment ID: kgoghed, Similarity: 0.01
+        Parent ID: kfvq1a5, Comment ID: kfvwm1d, Similarity: 0.05
+        Parent ID: kfvqr9x, Comment ID: kfvrkpn, Similarity: 0.49
+        Parent ID: kfvqr9x, Comment ID: kfvrnyt, Similarity: 0.53
+        Parent ID: kfvqr9x, Comment ID: kfvrwo1, Similarity: 0.76
+        Parent ID: kfvqr9x, Comment ID: kgogkul, Similarity: 0.02
+            Parent ID: kfvrnyt, Comment ID: kfvt0g5, Similarity: 0.08
+            Parent ID: kfvrnyt, Comment ID: kfvudgt, Similarity: 0.60
+            Parent ID: kfvrnyt, Comment ID: kfwceiv, Similarity: 0.63
+            Parent ID: kfvrwo1, Comment ID: kfw9vjj, Similarity: 0.16
+                Parent ID: kfvt0g5, Comment ID: kfw0q24, Similarity: 0.02
+                Parent ID: kfvudgt, Comment ID: kfvws46, Similarity: 0.41
+                Parent ID: kfwceiv, Comment ID: kfwdqv2, Similarity: 0.18
+Parent ID: None, Comment ID: kfvirnh, Similarity: 0.35
+    Parent ID: kfvirnh, Comment ID: kfvnjs2, Similarity: 0.26
+    Parent ID: kfvirnh, Comment ID: kfvnmp1, Similarity: 0.38
+    Parent ID: kfvirnh, Comment ID: kfvocg2, Similarity: 0.38
+        Parent ID: kfvnjs2, Comment ID: kfvpn4u, Similarity: 0.59
+        Parent ID: kfvnjs2, Comment ID: kfwogf4, Similarity: 0.41
+Parent ID: None, Comment ID: kfvirsw, Similarity: 0.16
+    Parent ID: kfvirsw, Comment ID: kfvm2iq, Similarity: 0.02
+Parent ID: None, Comment ID: kfvix25, Similarity: 0.48
+    Parent ID: kfvix25, Comment ID: kfvpqef, Similarity: 0.47
+    Parent ID: kfvix25, Comment ID: kfvtby1, Similarity: 0.19
+    Parent ID: kfvix25, Comment ID: kfvzqrx, Similarity: 0.21
+        Parent ID: kfvzqrx, Comment ID: kfw2sfu, Similarity: 0.33
+Parent ID: None, Comment ID: kfvj9wr, Similarity: 0.21
+    Parent ID: kfvj9wr, Comment ID: kfvqbeb, Similarity: 0.58
+    Parent ID: kfvj9wr, Comment ID: kfvs5tk, Similarity: 0.27
+    Parent ID: kfvj9wr, Comment ID: kfvs659, Similarity: 0.04
+    Parent ID: kfvj9wr, Comment ID: kfvscoi, Similarity: 0.35
+        Parent ID: kfvqbeb, Comment ID: kfvw7cc, Similarity: 0.18
+        Parent ID: kfvs659, Comment ID: kfvshih, Similarity: 0.41
+            Parent ID: kfvshih, Comment ID: kfw6d8c, Similarity: 0.53
+Parent ID: None, Comment ID: kfvjel5, Similarity: 0.40
+    Parent ID: kfvjel5, Comment ID: kfvk288, Similarity: 0.38
+    Parent ID: kfvjel5, Comment ID: kfvksce, Similarity: 0.27
+    Parent ID: kfvjel5, Comment ID: kfvl8l5, Similarity: 0.34
+        Parent ID: kfvk288, Comment ID: kfvvg66, Similarity: 0.63
+        Parent ID: kfvksce, Comment ID: kfvvwoq, Similarity: 0.46
+        Parent ID: kfvl8l5, Comment ID: kfvnqhz, Similarity: 0.09
+        Parent ID: kfvl8l5, Comment ID: kfvuj6p, Similarity: 0.21
+            Parent ID: kfvuj6p, Comment ID: kfw1o6i, Similarity: 0.26
+                Parent ID: kfw1o6i, Comment ID: kfwewbx, Similarity: 0.13
+Parent ID: None, Comment ID: kfvjghk, Similarity: 0.25
+    Parent ID: kfvjghk, Comment ID: kfvk3kb, Similarity: 0.20
+    Parent ID: kfvjghk, Comment ID: kfvlhgv, Similarity: 0.41
+    Parent ID: kfvjghk, Comment ID: kfvmuki, Similarity: 0.47
+    Parent ID: kfvjghk, Comment ID: kfvy4ln, Similarity: 0.32
+    Parent ID: kfvjghk, Comment ID: kfw169i, Similarity: 0.34
+    Parent ID: kfvjghk, Comment ID: kfw399e, Similarity: 0.48
+        Parent ID: kfvk3kb, Comment ID: kfvo87x, Similarity: 0.30
+        Parent ID: kfvmuki, Comment ID: kfvrynf, Similarity: 0.30
+Parent ID: None, Comment ID: kfvjm5k, Similarity: 0.27
+    Parent ID: kfvjm5k, Comment ID: kfvu27h, Similarity: 0.73
+Parent ID: None, Comment ID: kfvjzsv, Similarity: 0.38
+    Parent ID: kfvjzsv, Comment ID: kfvlqrq, Similarity: 0.05
+    Parent ID: kfvjzsv, Comment ID: kfvocl4, Similarity: 0.34
+    Parent ID: kfvjzsv, Comment ID: kfvqx43, Similarity: 0.34
+    Parent ID: kfvjzsv, Comment ID: kfvqy52, Similarity: 0.17
+    Parent ID: kfvjzsv, Comment ID: kfvu6wy, Similarity: 0.56
+    Parent ID: kfvjzsv, Comment ID: kfvuwqd, Similarity: 0.21
+    Parent ID: kfvjzsv, Comment ID: kfvx2s9, Similarity: 0.46
+    Parent ID: kfvjzsv, Comment ID: kfvydiz, Similarity: 0.41
+        Parent ID: kfvocl4, Comment ID: kfw53yi, Similarity: 0.19
+Parent ID: None, Comment ID: kfvk6an, Similarity: 0.45
+    Parent ID: kfvk6an, Comment ID: kfvu0sa, Similarity: 0.46
+    Parent ID: kfvk6an, Comment ID: kfvu463, Similarity: 0.17
+    Parent ID: kfvk6an, Comment ID: kfvx53d, Similarity: 0.52
+        Parent ID: kfvu463, Comment ID: kfvuiik, Similarity: 0.04
+            Parent ID: kfvuiik, Comment ID: kfvuyc9, Similarity: 0.08
+Parent ID: None, Comment ID: kfvkg25, Similarity: 0.28
+    Parent ID: kfvkg25, Comment ID: kfvr2hb, Similarity: 0.27
+        Parent ID: kfvr2hb, Comment ID: kfvrkwj, Similarity: 0.04
+            Parent ID: kfvrkwj, Comment ID: kfvruqi, Similarity: 0.17
+                Parent ID: kfvruqi, Comment ID: kfvs1cr, Similarity: 0.39
+                    Parent ID: kfvs1cr, Comment ID: kfvs9qn, Similarity: 0.68
+                        Parent ID: kfvs9qn, Comment ID: kfvsfgl, Similarity: 0.26
+                            Parent ID: kfvsfgl, Comment ID: kfvx2ld, Similarity: 0.30
+                                Parent ID: kfvx2ld, Comment ID: kfvxid5, Similarity: 0.26
+Parent ID: None, Comment ID: kfvkjj9, Similarity: 0.15
+    Parent ID: kfvkjj9, Comment ID: kfvpjix, Similarity: 0.17
+Parent ID: None, Comment ID: kfvkkjg, Similarity: 0.49
+    Parent ID: kfvkkjg, Comment ID: kfvpavm, Similarity: 0.67
+    Parent ID: kfvkkjg, Comment ID: kfvpci9, Similarity: 0.69
+    Parent ID: kfvkkjg, Comment ID: kfvpx2e, Similarity: 0.23
+    Parent ID: kfvkkjg, Comment ID: kfvruuw, Similarity: 0.58
+    Parent ID: kfvkkjg, Comment ID: kfvsd94, Similarity: 0.13
+    Parent ID: kfvkkjg, Comment ID: kfvtmmk, Similarity: 0.53
+    Parent ID: kfvkkjg, Comment ID: kfvun9j, Similarity: 0.16
+    Parent ID: kfvkkjg, Comment ID: kfvyxpb, Similarity: 0.40
+        Parent ID: kfvpci9, Comment ID: kfvsa66, Similarity: 0.08
+        Parent ID: kfvtmmk, Comment ID: kfvudbw, Similarity: 0.53
+        Parent ID: kfvtmmk, Comment ID: kfvy6kz, Similarity: -0.11
+        Parent ID: kfvtmmk, Comment ID: kfwa2rw, Similarity: 0.21
+        Parent ID: kfvyxpb, Comment ID: kfw3zgl, Similarity: 0.04
+            Parent ID: kfvsa66, Comment ID: kfvwhr7, Similarity: 0.24
+            Parent ID: kfw3zgl, Comment ID: kfw4i29, Similarity: -0.01
+                Parent ID: kfvwhr7, Comment ID: kfvyxmi, Similarity: 0.24
+Parent ID: None, Comment ID: kfvkm5t, Similarity: 0.42
+    Parent ID: kfvkm5t, Comment ID: kfvokmo, Similarity: 0.18
+    Parent ID: kfvkm5t, Comment ID: kfvrfdt, Similarity: 0.07
+    Parent ID: kfvkm5t, Comment ID: kfvrplz, Similarity: 0.38
+    Parent ID: kfvkm5t, Comment ID: kfvuqnp, Similarity: 0.45
+    Parent ID: kfvkm5t, Comment ID: kfvx0mo, Similarity: 0.22
+    Parent ID: kfvkm5t, Comment ID: kfw4w6r, Similarity: 0.00
+        Parent ID: kfvokmo, Comment ID: kfvr3c5, Similarity: 0.41
+        Parent ID: kfvrfdt, Comment ID: kfvrlr9, Similarity: 0.36
+            Parent ID: kfvrlr9, Comment ID: kfvt01b, Similarity: 0.44
+            Parent ID: kfvrlr9, Comment ID: kfvtpol, Similarity: 0.26
+                Parent ID: kfvt01b, Comment ID: kfvyy3h, Similarity: 0.31
+                    Parent ID: kfvyy3h, Comment ID: kfw4zvw, Similarity: 0.33
+Parent ID: None, Comment ID: kfvkmf6, Similarity: 0.13
+    Parent ID: kfvkmf6, Comment ID: kfvn8eu, Similarity: 0.30
+    Parent ID: kfvkmf6, Comment ID: kfvnghg, Similarity: 0.31
+    Parent ID: kfvkmf6, Comment ID: kfvrahq, Similarity: 0.55
+    Parent ID: kfvkmf6, Comment ID: kfvw2b1, Similarity: -0.04
+    Parent ID: kfvkmf6, Comment ID: kfvxeph, Similarity: 0.45
+        Parent ID: kfvn8eu, Comment ID: kfvnhrz, Similarity: 0.30
+        Parent ID: kfvn8eu, Comment ID: kfvq3ar, Similarity: 0.37
+        Parent ID: kfvn8eu, Comment ID: kfvt8c5, Similarity: 0.35
+        Parent ID: kfvnghg, Comment ID: kfvoocm, Similarity: 0.31
+        Parent ID: kfvrahq, Comment ID: kfvx3ph, Similarity: 0.41
+            Parent ID: kfvoocm, Comment ID: kfvpg2n, Similarity: 0.02
+                Parent ID: kfvpg2n, Comment ID: kfvptws, Similarity: 0.42
+                    Parent ID: kfvptws, Comment ID: kfvq53s, Similarity: 0.28
+Parent ID: None, Comment ID: kfvl5aj, Similarity: 0.32
+    Parent ID: kfvl5aj, Comment ID: kfvor7u, Similarity: 0.59
+Parent ID: None, Comment ID: kfvlbbj, Similarity: 0.32
+    Parent ID: kfvlbbj, Comment ID: kfvogi3, Similarity: 0.17
+    Parent ID: kfvlbbj, Comment ID: kfvp4zv, Similarity: -0.04
+    Parent ID: kfvlbbj, Comment ID: kfvrysc, Similarity: 0.44
+        Parent ID: kfvrysc, Comment ID: kfvulzh, Similarity: 0.29
+            Parent ID: kfvulzh, Comment ID: kfw0wcb, Similarity: 0.34
+Parent ID: None, Comment ID: kfvljg5, Similarity: 0.37
+    Parent ID: kfvljg5, Comment ID: kfvp6tq, Similarity: 0.20
+    Parent ID: kfvljg5, Comment ID: kfvr4d6, Similarity: 0.39
+    Parent ID: kfvljg5, Comment ID: kfvx0a8, Similarity: 0.27
+    Parent ID: kfvljg5, Comment ID: kfwtb4s, Similarity: 0.29
+        Parent ID: kfvr4d6, Comment ID: kfvre5w, Similarity: 0.41
+Parent ID: None, Comment ID: kfvlojv, Similarity: 0.16
+    Parent ID: kfvlojv, Comment ID: kfvn5wx, Similarity: 0.10
+    Parent ID: kfvlojv, Comment ID: kfvrf6v, Similarity: 0.44
+        Parent ID: kfvn5wx, Comment ID: kfvsdfw, Similarity: 0.10
+        Parent ID: kfvrf6v, Comment ID: kfvw8jb, Similarity: 0.63
+Parent ID: None, Comment ID: kfvluze, Similarity: 0.32
+    Parent ID: kfvluze, Comment ID: kfvny5i, Similarity: 0.12
+        Parent ID: kfvny5i, Comment ID: kfvoknk, Similarity: 0.66
+Parent ID: None, Comment ID: kfvlvij, Similarity: 0.44
+    Parent ID: kfvlvij, Comment ID: kfvtq2z, Similarity: 0.66
+    Parent ID: kfvlvij, Comment ID: kfvuy06, Similarity: 0.49
+    Parent ID: kfvlvij, Comment ID: kfvw5la, Similarity: 0.20
+        Parent ID: kfvtq2z, Comment ID: kfvval6, Similarity: 0.55
+Parent ID: None, Comment ID: kfvm2aw, Similarity: 0.31
+    Parent ID: kfvm2aw, Comment ID: kfvn6wc, Similarity: 0.08
+    Parent ID: kfvm2aw, Comment ID: kfvq4a0, Similarity: 0.34
+    Parent ID: kfvm2aw, Comment ID: kfw2ue2, Similarity: 0.30
+        Parent ID: kfvn6wc, Comment ID: kfvo207, Similarity: 0.36
+        Parent ID: kfvq4a0, Comment ID: kfw298v, Similarity: 0.32
+Parent ID: None, Comment ID: kfvmbft, Similarity: 0.22
+    Parent ID: kfvmbft, Comment ID: kfvo94k, Similarity: 0.21
+        Parent ID: kfvo94k, Comment ID: kfvqqf6, Similarity: 0.26
+            Parent ID: kfvqqf6, Comment ID: kfvrbyb, Similarity: 0.11
+Parent ID: None, Comment ID: kfvmii4, Similarity: 0.43
+    Parent ID: kfvmii4, Comment ID: kfvvp80, Similarity: 0.22
+Parent ID: None, Comment ID: kfvmke7, Similarity: 0.45
+    Parent ID: kfvmke7, Comment ID: kfvqhkp, Similarity: 0.38
+    Parent ID: kfvmke7, Comment ID: kfvxov2, Similarity: 0.36
+        Parent ID: kfvqhkp, Comment ID: kfvten2, Similarity: 0.41
+            Parent ID: kfvten2, Comment ID: kfw8ybr, Similarity: 0.14
+                Parent ID: kfw8ybr, Comment ID: kfwae0q, Similarity: 0.85
+Parent ID: None, Comment ID: kfvmm0q, Similarity: 0.45
+    Parent ID: kfvmm0q, Comment ID: kfvu3kc, Similarity: 0.12
+Parent ID: None, Comment ID: kfvmm9s, Similarity: 0.20
+    Parent ID: kfvmm9s, Comment ID: kfvphxg, Similarity: 0.17
+        Parent ID: kfvphxg, Comment ID: kfvplt1, Similarity: 0.17
+            Parent ID: kfvplt1, Comment ID: kfw7ta5, Similarity: -0.02
+Parent ID: None, Comment ID: kfvmrfo, Similarity: 0.44
+    Parent ID: kfvmrfo, Comment ID: kfvofm5, Similarity: 0.33
+    Parent ID: kfvmrfo, Comment ID: kfvpuck, Similarity: 0.26
+        Parent ID: kfvpuck, Comment ID: kfvr9b7, Similarity: 0.50
+Parent ID: None, Comment ID: kfvn5hx, Similarity: 0.48
+    Parent ID: kfvn5hx, Comment ID: kfvnmqo, Similarity: 0.13
+    Parent ID: kfvn5hx, Comment ID: kfvqscx, Similarity: 0.19
+    Parent ID: kfvn5hx, Comment ID: kfvy3yh, Similarity: 0.30
+    Parent ID: kfvn5hx, Comment ID: kfw1ug2, Similarity: 0.49
+Parent ID: None, Comment ID: kfvnu80, Similarity: 0.38
+    Parent ID: kfvnu80, Comment ID: kfvqlav, Similarity: 0.19
+        Parent ID: kfvqlav, Comment ID: kfvwroz, Similarity: 0.17
+Parent ID: None, Comment ID: kfvo1qq, Similarity: 0.72
+    Parent ID: kfvo1qq, Comment ID: kfvqj07, Similarity: 0.48
+Parent ID: None, Comment ID: kfvo2y9, Similarity: 0.29
+    Parent ID: kfvo2y9, Comment ID: kfvqpl8, Similarity: 0.23
+    Parent ID: kfvo2y9, Comment ID: kfvrunv, Similarity: 0.44
+    Parent ID: kfvo2y9, Comment ID: kfvvb8v, Similarity: 0.41
+    Parent ID: kfvo2y9, Comment ID: kfvvnhv, Similarity: 0.61
+        Parent ID: kfvvb8v, Comment ID: kfvvtt4, Similarity: 0.24
+        Parent ID: kfvvb8v, Comment ID: kfvwqxi, Similarity: 0.44
+        Parent ID: kfvvnhv, Comment ID: kfwnvao, Similarity: 0.15
+Parent ID: None, Comment ID: kfvo8r2, Similarity: 0.02
+    Parent ID: kfvo8r2, Comment ID: kfvoa4r, Similarity: 0.08
+Parent ID: None, Comment ID: kfvodme, Similarity: 0.19
+    Parent ID: kfvodme, Comment ID: kfvpgp8, Similarity: 0.22
+        Parent ID: kfvpgp8, Comment ID: kfvrdsy, Similarity: 0.34
+            Parent ID: kfvrdsy, Comment ID: kfvrna3, Similarity: 0.08
+Parent ID: None, Comment ID: kfvopux, Similarity: 0.54
+    Parent ID: kfvopux, Comment ID: kfvv7cu, Similarity: 0.35
+Parent ID: None, Comment ID: kfvpnt5, Similarity: 0.54
+    Parent ID: kfvpnt5, Comment ID: kfvrm21, Similarity: 0.35
+Parent ID: None, Comment ID: kfvpou9, Similarity: 0.25
+    Parent ID: kfvpou9, Comment ID: kfw4or1, Similarity: 0.18
+        Parent ID: kfw4or1, Comment ID: kfw5qg8, Similarity: 0.12
+            Parent ID: kfw5qg8, Comment ID: kfw7joj, Similarity: 0.12
+Parent ID: None, Comment ID: kfvpyfp, Similarity: 0.23
+    Parent ID: kfvpyfp, Comment ID: kfvsqbn, Similarity: 0.41
+Parent ID: None, Comment ID: kfvq3ue, Similarity: 0.27
+    Parent ID: kfvq3ue, Comment ID: kfvuej8, Similarity: 0.48
+Parent ID: None, Comment ID: kfvqlv8, Similarity: 0.35
+    Parent ID: kfvqlv8, Comment ID: kfvz9if, Similarity: 0.50
+    Parent ID: kfvqlv8, Comment ID: kfw0kn6, Similarity: 0.05
+Parent ID: None, Comment ID: kfvquri, Similarity: 0.37
+    Parent ID: kfvquri, Comment ID: kfvud3q, Similarity: 0.40
+Parent ID: None, Comment ID: kfvrh6o, Similarity: 0.43
+    Parent ID: kfvrh6o, Comment ID: kfvy3dg, Similarity: 0.18
+        Parent ID: kfvy3dg, Comment ID: kfvyado, Similarity: 0.21
+Parent ID: None, Comment ID: kfvrtrn, Similarity: 0.51
+    Parent ID: kfvrtrn, Comment ID: kfw2th2, Similarity: 0.49
+Parent ID: None, Comment ID: kfvs2vt, Similarity: 0.34
+    Parent ID: kfvs2vt, Comment ID: kfw1qhe, Similarity: 0.13
+Parent ID: None, Comment ID: kfvsj4u, Similarity: 0.16
+    Parent ID: kfvsj4u, Comment ID: kfw5mnj, Similarity: 0.38
+Parent ID: None, Comment ID: kfvskin, Similarity: 0.27
+    Parent ID: kfvskin, Comment ID: kfw53rc, Similarity: 0.51
+        Parent ID: kfw53rc, Comment ID: kfw87r0, Similarity: 0.25
+Parent ID: None, Comment ID: kfvtwir, Similarity: 0.31
+    Parent ID: kfvtwir, Comment ID: kfvxkj1, Similarity: 0.63
+Parent ID: None, Comment ID: kfvu6xu, Similarity: 0.18
+    Parent ID: kfvu6xu, Comment ID: kfvw7h8, Similarity: 0.18
+    Parent ID: kfvu6xu, Comment ID: kfw2w66, Similarity: 0.53
+        Parent ID: kfvw7h8, Comment ID: kfx6x62, Similarity: 0.20
+        Parent ID: kfw2w66, Comment ID: kfx6v53, Similarity: 0.28
+Parent ID: None, Comment ID: kfvume7, Similarity: 0.03
+    Parent ID: kfvume7, Comment ID: kfvvapc, Similarity: 0.15
+Parent ID: None, Comment ID: kfvwquy, Similarity: 0.16
+    Parent ID: kfvwquy, Comment ID: kfvwz0u, Similarity: 0.45
+        Parent ID: kfvwz0u, Comment ID: kfvye4s, Similarity: 0.42
+Parent ID: None, Comment ID: kfvxi3q, Similarity: 0.16
+    Parent ID: kfvxi3q, Comment ID: kfw1ji7, Similarity: 0.36
+Parent ID: None, Comment ID: kfw9f8e, Similarity: 0.28
+    Parent ID: kfw9f8e, Comment ID: kfwcegt, Similarity: 0.15

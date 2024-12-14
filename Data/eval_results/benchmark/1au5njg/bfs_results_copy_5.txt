@@ -1,0 +1,322 @@
+Parent ID: None, Comment ID: kr1rn5g, Similarity: 0.04
+    Parent ID: kr1rn5g, Comment ID: kr1sfui, Similarity: 0.53
+    Parent ID: kr1rn5g, Comment ID: kr2gahq, Similarity: 0.03
+    Parent ID: kr1rn5g, Comment ID: kr3n0kp, Similarity: 0.35
+    Parent ID: kr1rn5g, Comment ID: kr4b1fw, Similarity: 0.10
+    Parent ID: kr1rn5g, Comment ID: kr4p4s5, Similarity: 0.29
+    Parent ID: kr1rn5g, Comment ID: kr51jc8, Similarity: 0.13
+        Parent ID: kr1sfui, Comment ID: kr235aa, Similarity: 0.19
+        Parent ID: kr1sfui, Comment ID: kr297nj, Similarity: 0.10
+        Parent ID: kr1sfui, Comment ID: kr3g49d, Similarity: 0.30
+        Parent ID: kr1sfui, Comment ID: kr3vjkd, Similarity: 0.58
+        Parent ID: kr1sfui, Comment ID: kr4cp8i, Similarity: 0.19
+        Parent ID: kr3n0kp, Comment ID: kr4wnj2, Similarity: 0.22
+            Parent ID: kr235aa, Comment ID: kr3vngj, Similarity: 0.16
+            Parent ID: kr297nj, Comment ID: kr5drxc, Similarity: 0.19
+                Parent ID: kr3vngj, Comment ID: kr4l45n, Similarity: 0.36
+Parent ID: None, Comment ID: kr1txph, Similarity: 0.01
+    Parent ID: kr1txph, Comment ID: kr23ff7, Similarity: 0.23
+    Parent ID: kr1txph, Comment ID: kr2a9ye, Similarity: 0.39
+    Parent ID: kr1txph, Comment ID: kr2ztns, Similarity: 0.55
+Parent ID: None, Comment ID: kr1umgc, Similarity: 0.06
+    Parent ID: kr1umgc, Comment ID: kr2hbyo, Similarity: 0.40
+Parent ID: None, Comment ID: kr1uvi8, Similarity: -0.05
+    Parent ID: kr1uvi8, Comment ID: kr23ooq, Similarity: 0.51
+    Parent ID: kr1uvi8, Comment ID: kr26vey, Similarity: 0.01
+    Parent ID: kr1uvi8, Comment ID: kr2fvin, Similarity: 0.31
+    Parent ID: kr1uvi8, Comment ID: kr2zc9q, Similarity: 0.46
+    Parent ID: kr1uvi8, Comment ID: kr36u62, Similarity: 0.64
+    Parent ID: kr1uvi8, Comment ID: kr3di64, Similarity: 0.33
+        Parent ID: kr23ooq, Comment ID: kr2av76, Similarity: 0.45
+        Parent ID: kr23ooq, Comment ID: kr3c4j0, Similarity: 0.36
+        Parent ID: kr26vey, Comment ID: kr2b4n7, Similarity: 0.09
+        Parent ID: kr2fvin, Comment ID: kr2klu6, Similarity: 0.34
+        Parent ID: kr2fvin, Comment ID: kr35xs8, Similarity: 0.12
+            Parent ID: kr3c4j0, Comment ID: kr4slps, Similarity: 0.12
+            Parent ID: kr2b4n7, Comment ID: kr2ejfz, Similarity: 0.34
+            Parent ID: kr2b4n7, Comment ID: kr2o24n, Similarity: 0.12
+                Parent ID: kr2ejfz, Comment ID: kr34bby, Similarity: 0.24
+Parent ID: None, Comment ID: kr1v02w, Similarity: 0.08
+    Parent ID: kr1v02w, Comment ID: kr2ihrn, Similarity: 0.23
+    Parent ID: kr1v02w, Comment ID: kr2mb3d, Similarity: 0.08
+        Parent ID: kr2mb3d, Comment ID: kreae7t, Similarity: 0.49
+Parent ID: None, Comment ID: kr1vha1, Similarity: 0.09
+    Parent ID: kr1vha1, Comment ID: kr65blh, Similarity: 0.03
+Parent ID: None, Comment ID: kr1vn1a, Similarity: 0.03
+    Parent ID: kr1vn1a, Comment ID: kr1yjcz, Similarity: 0.25
+    Parent ID: kr1vn1a, Comment ID: kr21okn, Similarity: 0.04
+    Parent ID: kr1vn1a, Comment ID: kr229iz, Similarity: 0.17
+    Parent ID: kr1vn1a, Comment ID: kr25yxp, Similarity: 0.25
+    Parent ID: kr1vn1a, Comment ID: kr2pyoz, Similarity: 0.47
+    Parent ID: kr1vn1a, Comment ID: kr2udy6, Similarity: 0.08
+    Parent ID: kr1vn1a, Comment ID: kr34vd5, Similarity: -0.06
+    Parent ID: kr1vn1a, Comment ID: kr7axsg, Similarity: 0.08
+    Parent ID: kr1vn1a, Comment ID: kr7uv00, Similarity: 0.28
+    Parent ID: kr1vn1a, Comment ID: kr8ywau, Similarity: 0.35
+        Parent ID: kr21okn, Comment ID: kr26zft, Similarity: -0.03
+        Parent ID: kr21okn, Comment ID: kr2p4ft, Similarity: -0.03
+        Parent ID: kr21okn, Comment ID: kr3p1jm, Similarity: 0.11
+            Parent ID: kr26zft, Comment ID: kr4avyq, Similarity: 0.43
+            Parent ID: kr2p4ft, Comment ID: kr3mk34, Similarity: 0.11
+            Parent ID: kr2p4ft, Comment ID: kr3sevr, Similarity: 0.13
+            Parent ID: kr2p4ft, Comment ID: kr4awe3, Similarity: 0.11
+Parent ID: None, Comment ID: kr1vtgh, Similarity: 0.11
+    Parent ID: kr1vtgh, Comment ID: kr23aap, Similarity: 0.31
+    Parent ID: kr1vtgh, Comment ID: kr25279, Similarity: 0.35
+    Parent ID: kr1vtgh, Comment ID: kr2funp, Similarity: 0.40
+    Parent ID: kr1vtgh, Comment ID: kr3bpxy, Similarity: 0.53
+    Parent ID: kr1vtgh, Comment ID: kr4fof3, Similarity: 0.37
+        Parent ID: kr23aap, Comment ID: kr24nrv, Similarity: 0.31
+        Parent ID: kr23aap, Comment ID: kr2kjuq, Similarity: 0.22
+        Parent ID: kr23aap, Comment ID: kr2ripr, Similarity: 0.23
+        Parent ID: kr23aap, Comment ID: kr3bn5y, Similarity: 0.27
+        Parent ID: kr2funp, Comment ID: kr2fzy9, Similarity: 0.34
+        Parent ID: kr3bpxy, Comment ID: kr4iu8a, Similarity: 0.12
+            Parent ID: kr24nrv, Comment ID: kr33t5f, Similarity: 0.40
+            Parent ID: kr2kjuq, Comment ID: kr2nb9x, Similarity: 0.21
+            Parent ID: kr2ripr, Comment ID: kr3a948, Similarity: 0.52
+            Parent ID: kr2ripr, Comment ID: kr8pomw, Similarity: 0.19
+                Parent ID: kr33t5f, Comment ID: kr3a59e, Similarity: 0.43
+                Parent ID: kr2nb9x, Comment ID: kr3b03a, Similarity: 0.29
+                    Parent ID: kr3a59e, Comment ID: kr3b4fz, Similarity: 0.28
+                    Parent ID: kr3b03a, Comment ID: kr4ttmz, Similarity: 0.49
+Parent ID: None, Comment ID: kr1vu7n, Similarity: 0.03
+    Parent ID: kr1vu7n, Comment ID: kr24hke, Similarity: 0.04
+        Parent ID: kr24hke, Comment ID: kr2c3y8, Similarity: 0.20
+Parent ID: None, Comment ID: kr1vwdp, Similarity: 0.02
+    Parent ID: kr1vwdp, Comment ID: kr3chze, Similarity: 0.63
+        Parent ID: kr3chze, Comment ID: kr4kouj, Similarity: 0.68
+Parent ID: None, Comment ID: kr1wn53, Similarity: -0.04
+    Parent ID: kr1wn53, Comment ID: kr2es8u, Similarity: 0.05
+    Parent ID: kr1wn53, Comment ID: kr7w9rw, Similarity: 0.33
+        Parent ID: kr2es8u, Comment ID: kr2grzs, Similarity: 0.10
+Parent ID: None, Comment ID: kr1x2vw, Similarity: 0.06
+    Parent ID: kr1x2vw, Comment ID: kr2xry2, Similarity: 0.11
+    Parent ID: kr1x2vw, Comment ID: kr3c98b, Similarity: 0.13
+    Parent ID: kr1x2vw, Comment ID: kr3k11q, Similarity: 0.07
+Parent ID: None, Comment ID: kr1xei9, Similarity: -0.09
+    Parent ID: kr1xei9, Comment ID: kr341dy, Similarity: 0.58
+        Parent ID: kr341dy, Comment ID: kr4ymak, Similarity: 0.28
+            Parent ID: kr4ymak, Comment ID: kr55m1c, Similarity: 0.48
+Parent ID: None, Comment ID: kr1y4tm, Similarity: -0.01
+    Parent ID: kr1y4tm, Comment ID: kr20z4i, Similarity: 0.07
+    Parent ID: kr1y4tm, Comment ID: kr21o8c, Similarity: 0.19
+    Parent ID: kr1y4tm, Comment ID: kr271qd, Similarity: 0.20
+    Parent ID: kr1y4tm, Comment ID: kr30tst, Similarity: 0.38
+    Parent ID: kr1y4tm, Comment ID: kr5ehdu, Similarity: 0.15
+    Parent ID: kr1y4tm, Comment ID: kr6gzfk, Similarity: 0.57
+        Parent ID: kr21o8c, Comment ID: kr3hkmw, Similarity: 0.41
+        Parent ID: kr5ehdu, Comment ID: kr5nhqw, Similarity: 0.27
+Parent ID: None, Comment ID: kr1ynuu, Similarity: 0.00
+    Parent ID: kr1ynuu, Comment ID: kr21dwy, Similarity: 0.21
+    Parent ID: kr1ynuu, Comment ID: kr2457p, Similarity: 0.12
+    Parent ID: kr1ynuu, Comment ID: kr25tc1, Similarity: 0.69
+    Parent ID: kr1ynuu, Comment ID: kr2bufd, Similarity: 0.34
+    Parent ID: kr1ynuu, Comment ID: kr2c0lw, Similarity: 0.74
+    Parent ID: kr1ynuu, Comment ID: kr2n9w4, Similarity: 0.50
+    Parent ID: kr1ynuu, Comment ID: kr2zyyt, Similarity: 0.46
+    Parent ID: kr1ynuu, Comment ID: kr3bbcq, Similarity: 0.09
+    Parent ID: kr1ynuu, Comment ID: kr3smqm, Similarity: 0.26
+    Parent ID: kr1ynuu, Comment ID: kr3ytqz, Similarity: 0.47
+    Parent ID: kr1ynuu, Comment ID: kr4989h, Similarity: 0.68
+    Parent ID: kr1ynuu, Comment ID: kr5l8ai, Similarity: 0.14
+    Parent ID: kr1ynuu, Comment ID: krgo61q, Similarity: 0.06
+        Parent ID: kr21dwy, Comment ID: kr3k59m, Similarity: 0.07
+        Parent ID: kr25tc1, Comment ID: kr3xt8h, Similarity: 0.34
+        Parent ID: kr25tc1, Comment ID: kr7anh4, Similarity: 0.35
+        Parent ID: kr2bufd, Comment ID: kr32vic, Similarity: 0.44
+        Parent ID: kr2bufd, Comment ID: krabtf4, Similarity: 0.28
+        Parent ID: kr2c0lw, Comment ID: kr32anf, Similarity: 0.27
+        Parent ID: kr2zyyt, Comment ID: kr95b57, Similarity: 0.40
+        Parent ID: kr2zyyt, Comment ID: krcv7ut, Similarity: 0.29
+        Parent ID: kr3smqm, Comment ID: kr4ugta, Similarity: 0.22
+Parent ID: None, Comment ID: kr1yp0h, Similarity: 0.20
+    Parent ID: kr1yp0h, Comment ID: kr2hqpe, Similarity: 0.37
+    Parent ID: kr1yp0h, Comment ID: kr39rmz, Similarity: 0.39
+    Parent ID: kr1yp0h, Comment ID: kr51tx3, Similarity: 0.20
+        Parent ID: kr2hqpe, Comment ID: kr2kanr, Similarity: 0.24
+Parent ID: None, Comment ID: kr1z3ot, Similarity: -0.07
+    Parent ID: kr1z3ot, Comment ID: kr28dad, Similarity: 0.42
+    Parent ID: kr1z3ot, Comment ID: kr2jakk, Similarity: 0.58
+    Parent ID: kr1z3ot, Comment ID: kr2jj2x, Similarity: 0.53
+    Parent ID: kr1z3ot, Comment ID: kr4wu1r, Similarity: 0.61
+        Parent ID: kr28dad, Comment ID: kr2bti1, Similarity: 0.23
+        Parent ID: kr28dad, Comment ID: kr2khqq, Similarity: 0.14
+        Parent ID: kr2jakk, Comment ID: kr548sm, Similarity: 0.07
+        Parent ID: kr4wu1r, Comment ID: kr54ew3, Similarity: 0.53
+            Parent ID: kr2bti1, Comment ID: kr2jphx, Similarity: 0.56
+            Parent ID: kr2bti1, Comment ID: kr2sxx2, Similarity: 0.14
+            Parent ID: kr2bti1, Comment ID: kr41h9x, Similarity: 0.28
+            Parent ID: kr2bti1, Comment ID: kr55u7e, Similarity: 0.35
+            Parent ID: kr2khqq, Comment ID: kr2n1ae, Similarity: 0.41
+            Parent ID: kr2khqq, Comment ID: kr30w9r, Similarity: 0.13
+            Parent ID: kr2khqq, Comment ID: krc3iqz, Similarity: 0.22
+                Parent ID: kr2sxx2, Comment ID: kr3o6sa, Similarity: 0.07
+                Parent ID: kr30w9r, Comment ID: kr5oucz, Similarity: 0.25
+                Parent ID: krc3iqz, Comment ID: krcsors, Similarity: 0.58
+Parent ID: None, Comment ID: kr1zrvc, Similarity: 0.11
+    Parent ID: kr1zrvc, Comment ID: kr21m7l, Similarity: 0.01
+    Parent ID: kr1zrvc, Comment ID: kr283cx, Similarity: 0.27
+    Parent ID: kr1zrvc, Comment ID: kr2pezn, Similarity: 0.02
+    Parent ID: kr1zrvc, Comment ID: kr33czj, Similarity: 0.30
+    Parent ID: kr1zrvc, Comment ID: kr37d30, Similarity: 0.43
+    Parent ID: kr1zrvc, Comment ID: kr3q1hl, Similarity: 0.29
+        Parent ID: kr283cx, Comment ID: kr36auz, Similarity: 0.28
+        Parent ID: kr33czj, Comment ID: kr3lvqj, Similarity: 0.23
+        Parent ID: kr33czj, Comment ID: kr3sq1i, Similarity: 0.30
+        Parent ID: kr37d30, Comment ID: kr3f5mc, Similarity: 0.31
+            Parent ID: kr3sq1i, Comment ID: kra5vxo, Similarity: 0.44
+Parent ID: None, Comment ID: kr21g4p, Similarity: 0.06
+    Parent ID: kr21g4p, Comment ID: kr2q2k5, Similarity: 0.52
+    Parent ID: kr21g4p, Comment ID: kr3j8z9, Similarity: 0.35
+        Parent ID: kr3j8z9, Comment ID: kr3llrn, Similarity: 0.27
+Parent ID: None, Comment ID: kr21pc1, Similarity: 0.05
+    Parent ID: kr21pc1, Comment ID: kr660gh, Similarity: 0.24
+        Parent ID: kr660gh, Comment ID: kr6xvac, Similarity: 0.29
+Parent ID: None, Comment ID: kr21rlt, Similarity: -0.02
+    Parent ID: kr21rlt, Comment ID: kr30h97, Similarity: 0.26
+    Parent ID: kr21rlt, Comment ID: kr6wo5n, Similarity: 0.13
+Parent ID: None, Comment ID: kr21urq, Similarity: -0.02
+    Parent ID: kr21urq, Comment ID: kr3n61j, Similarity: 0.65
+    Parent ID: kr21urq, Comment ID: kr5gwiw, Similarity: 0.10
+    Parent ID: kr21urq, Comment ID: kra9qw6, Similarity: 0.11
+    Parent ID: kr21urq, Comment ID: krdj6b1, Similarity: 0.50
+        Parent ID: kr3n61j, Comment ID: kr4884f, Similarity: 0.14
+Parent ID: None, Comment ID: kr2263o, Similarity: -0.00
+    Parent ID: kr2263o, Comment ID: kr35ich, Similarity: 0.15
+    Parent ID: kr2263o, Comment ID: kr3iayq, Similarity: 0.10
+    Parent ID: kr2263o, Comment ID: kr3r105, Similarity: 0.15
+    Parent ID: kr2263o, Comment ID: kr5w2i2, Similarity: 0.29
+    Parent ID: kr2263o, Comment ID: kr717tm, Similarity: 0.07
+        Parent ID: kr35ich, Comment ID: kr3hfsu, Similarity: 0.32
+        Parent ID: kr35ich, Comment ID: kr3qtf5, Similarity: 0.23
+        Parent ID: kr3iayq, Comment ID: kr76whx, Similarity: 0.52
+            Parent ID: kr3hfsu, Comment ID: kr3q6ak, Similarity: 0.35
+Parent ID: None, Comment ID: kr229e2, Similarity: -0.02
+    Parent ID: kr229e2, Comment ID: kr2h9ft, Similarity: 0.50
+Parent ID: None, Comment ID: kr22kb0, Similarity: 0.02
+    Parent ID: kr22kb0, Comment ID: kr25d3d, Similarity: 0.51
+Parent ID: None, Comment ID: kr22l8p, Similarity: -0.03
+    Parent ID: kr22l8p, Comment ID: kr2efxw, Similarity: 0.51
+Parent ID: None, Comment ID: kr22ogv, Similarity: 0.07
+    Parent ID: kr22ogv, Comment ID: kr2tehz, Similarity: 0.59
+Parent ID: None, Comment ID: kr22ztt, Similarity: -0.05
+    Parent ID: kr22ztt, Comment ID: kr2y7d1, Similarity: 0.53
+Parent ID: None, Comment ID: kr24b2d, Similarity: 0.04
+    Parent ID: kr24b2d, Comment ID: kr2hh69, Similarity: 0.32
+    Parent ID: kr24b2d, Comment ID: kr33r41, Similarity: 0.26
+    Parent ID: kr24b2d, Comment ID: kr3p8qf, Similarity: 0.52
+    Parent ID: kr24b2d, Comment ID: kr5huga, Similarity: 0.39
+        Parent ID: kr2hh69, Comment ID: kr2mkho, Similarity: 0.03
+        Parent ID: kr3p8qf, Comment ID: kr6loqw, Similarity: 0.25
+Parent ID: None, Comment ID: kr24pao, Similarity: 0.03
+    Parent ID: kr24pao, Comment ID: kr3mthw, Similarity: 0.28
+Parent ID: None, Comment ID: kr24yb2, Similarity: 0.05
+    Parent ID: kr24yb2, Comment ID: kr32sdm, Similarity: 0.48
+    Parent ID: kr24yb2, Comment ID: kr46evi, Similarity: 0.46
+Parent ID: None, Comment ID: kr256dm, Similarity: 0.04
+    Parent ID: kr256dm, Comment ID: kr2ginl, Similarity: 0.45
+    Parent ID: kr256dm, Comment ID: kr432v1, Similarity: 0.39
+Parent ID: None, Comment ID: kr25k22, Similarity: 0.06
+    Parent ID: kr25k22, Comment ID: kr2fwb7, Similarity: 0.34
+        Parent ID: kr2fwb7, Comment ID: kr2kt9h, Similarity: 0.23
+            Parent ID: kr2kt9h, Comment ID: kr2pvs4, Similarity: 0.11
+            Parent ID: kr2kt9h, Comment ID: kr5fl12, Similarity: 0.01
+                Parent ID: kr2pvs4, Comment ID: kr2qa67, Similarity: 0.31
+                Parent ID: kr2pvs4, Comment ID: kr3ayz0, Similarity: 0.33
+Parent ID: None, Comment ID: kr25z3o, Similarity: -0.04
+    Parent ID: kr25z3o, Comment ID: kr3hsvp, Similarity: 0.60
+        Parent ID: kr3hsvp, Comment ID: kr4xoz5, Similarity: 0.37
+            Parent ID: kr4xoz5, Comment ID: kr711sm, Similarity: 0.32
+Parent ID: None, Comment ID: kr2715h, Similarity: 0.11
+    Parent ID: kr2715h, Comment ID: kr30ae0, Similarity: 0.11
+Parent ID: None, Comment ID: kr28emc, Similarity: 0.08
+    Parent ID: kr28emc, Comment ID: kr2r5kr, Similarity: 0.33
+    Parent ID: kr28emc, Comment ID: kr3j0ln, Similarity: 0.45
+    Parent ID: kr28emc, Comment ID: krcq9sh, Similarity: 0.28
+        Parent ID: kr2r5kr, Comment ID: kr3bs3x, Similarity: 0.19
+Parent ID: None, Comment ID: kr28kw9, Similarity: 0.01
+    Parent ID: kr28kw9, Comment ID: kr2qe2g, Similarity: 0.27
+    Parent ID: kr28kw9, Comment ID: krifmxi, Similarity: 0.31
+Parent ID: None, Comment ID: kr2af2b, Similarity: 0.07
+    Parent ID: kr2af2b, Comment ID: kr2fapd, Similarity: 0.43
+    Parent ID: kr2af2b, Comment ID: kr2tx7r, Similarity: 0.45
+    Parent ID: kr2af2b, Comment ID: kr3zfb8, Similarity: 0.32
+        Parent ID: kr2fapd, Comment ID: kr4krl1, Similarity: 0.10
+Parent ID: None, Comment ID: kr2aohr, Similarity: -0.02
+    Parent ID: kr2aohr, Comment ID: kr30nko, Similarity: 0.56
+Parent ID: None, Comment ID: kr2aw60, Similarity: 0.05
+    Parent ID: kr2aw60, Comment ID: kr2vqqu, Similarity: 0.18
+    Parent ID: kr2aw60, Comment ID: kr3artf, Similarity: 0.05
+Parent ID: None, Comment ID: kr2dz4l, Similarity: 0.04
+    Parent ID: kr2dz4l, Comment ID: kr3t1i3, Similarity: 0.59
+Parent ID: None, Comment ID: kr2f97t, Similarity: 0.05
+    Parent ID: kr2f97t, Comment ID: kr2i0q9, Similarity: 0.07
+    Parent ID: kr2f97t, Comment ID: kr2loz2, Similarity: 0.30
+    Parent ID: kr2f97t, Comment ID: kr3efi6, Similarity: 0.12
+    Parent ID: kr2f97t, Comment ID: kr41sa0, Similarity: 0.52
+    Parent ID: kr2f97t, Comment ID: kr4ta5z, Similarity: 0.04
+    Parent ID: kr2f97t, Comment ID: kr76rhy, Similarity: 0.12
+        Parent ID: kr2i0q9, Comment ID: kr4swvn, Similarity: -0.01
+        Parent ID: kr2loz2, Comment ID: kr38vqg, Similarity: 0.22
+        Parent ID: kr2loz2, Comment ID: kr3uxpo, Similarity: 0.25
+            Parent ID: kr4swvn, Comment ID: kr4vsqm, Similarity: 0.15
+Parent ID: None, Comment ID: kr2gofs, Similarity: 0.05
+    Parent ID: kr2gofs, Comment ID: kr37l26, Similarity: 0.30
+Parent ID: None, Comment ID: kr2grax, Similarity: 0.02
+    Parent ID: kr2grax, Comment ID: kr4nooc, Similarity: 0.52
+    Parent ID: kr2grax, Comment ID: kr7wh77, Similarity: 0.36
+Parent ID: None, Comment ID: kr2janz, Similarity: 0.01
+    Parent ID: kr2janz, Comment ID: kr2y3h3, Similarity: 0.03
+        Parent ID: kr2y3h3, Comment ID: kr2ydbn, Similarity: 0.04
+            Parent ID: kr2ydbn, Comment ID: kr2ykg5, Similarity: 0.51
+Parent ID: None, Comment ID: kr2kfy4, Similarity: 0.11
+    Parent ID: kr2kfy4, Comment ID: kr36vhg, Similarity: 0.15
+Parent ID: None, Comment ID: kr2l46e, Similarity: 0.00
+    Parent ID: kr2l46e, Comment ID: kr2zmg1, Similarity: 0.32
+Parent ID: None, Comment ID: kr2pgzb, Similarity: 0.13
+    Parent ID: kr2pgzb, Comment ID: kr3fptq, Similarity: 0.65
+Parent ID: None, Comment ID: kr2qqd9, Similarity: 0.18
+    Parent ID: kr2qqd9, Comment ID: kr3ge3y, Similarity: 0.18
+        Parent ID: kr3ge3y, Comment ID: kr3xlfj, Similarity: 0.42
+Parent ID: None, Comment ID: kr2r93h, Similarity: 0.09
+    Parent ID: kr2r93h, Comment ID: kr2wjge, Similarity: 0.12
+    Parent ID: kr2r93h, Comment ID: kr425fl, Similarity: 0.14
+    Parent ID: kr2r93h, Comment ID: kr42zai, Similarity: 0.44
+    Parent ID: kr2r93h, Comment ID: kr4fb32, Similarity: 0.36
+Parent ID: None, Comment ID: kr2rffj, Similarity: 0.03
+    Parent ID: kr2rffj, Comment ID: kr3lahq, Similarity: 0.26
+Parent ID: None, Comment ID: kr2rvwi, Similarity: 0.10
+    Parent ID: kr2rvwi, Comment ID: kr3mlyy, Similarity: 0.39
+Parent ID: None, Comment ID: kr2ujcc, Similarity: -0.02
+    Parent ID: kr2ujcc, Comment ID: kr3k6qb, Similarity: 0.43
+    Parent ID: kr2ujcc, Comment ID: kr6t559, Similarity: 0.77
+        Parent ID: kr3k6qb, Comment ID: kredvmw, Similarity: -0.00
+Parent ID: None, Comment ID: kr2x2pg, Similarity: 0.02
+    Parent ID: kr2x2pg, Comment ID: kr3owir, Similarity: 0.09
+Parent ID: None, Comment ID: kr2x7ha, Similarity: -0.04
+    Parent ID: kr2x7ha, Comment ID: kr3ns5q, Similarity: 0.69
+Parent ID: None, Comment ID: kr2yflk, Similarity: 0.07
+    Parent ID: kr2yflk, Comment ID: kr684dk, Similarity: 0.38
+Parent ID: None, Comment ID: kr31cad, Similarity: -0.02
+    Parent ID: kr31cad, Comment ID: kr62um2, Similarity: 0.46
+Parent ID: None, Comment ID: kr324cj, Similarity: -0.09
+    Parent ID: kr324cj, Comment ID: kr3p26e, Similarity: 0.13
+Parent ID: None, Comment ID: kr34w82, Similarity: 0.32
+    Parent ID: kr34w82, Comment ID: kr3gv3s, Similarity: 0.77
+Parent ID: None, Comment ID: kr35ifx, Similarity: -0.07
+    Parent ID: kr35ifx, Comment ID: kr3kc2q, Similarity: 0.33
+Parent ID: None, Comment ID: kr36nn1, Similarity: 0.14
+    Parent ID: kr36nn1, Comment ID: kr3pwhc, Similarity: 0.70
+Parent ID: None, Comment ID: kr3cm94, Similarity: -0.06
+    Parent ID: kr3cm94, Comment ID: kr3qvrc, Similarity: 0.59
+Parent ID: None, Comment ID: kr3ncv6, Similarity: 0.08
+    Parent ID: kr3ncv6, Comment ID: kr64jr2, Similarity: 0.24
+        Parent ID: kr64jr2, Comment ID: kr67fdx, Similarity: 0.32
+            Parent ID: kr67fdx, Comment ID: kr6fq6i, Similarity: 0.14
+Parent ID: None, Comment ID: kr3r4dh, Similarity: 0.10
+    Parent ID: kr3r4dh, Comment ID: kr483qc, Similarity: 0.29
+Parent ID: None, Comment ID: kr3w5zs, Similarity: 0.01
+    Parent ID: kr3w5zs, Comment ID: kr7xhe4, Similarity: 0.49
+Parent ID: None, Comment ID: kr4q4ew, Similarity: 0.07
+    Parent ID: kr4q4ew, Comment ID: kr58oa8, Similarity: -0.03
